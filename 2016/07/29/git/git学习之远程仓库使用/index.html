@@ -1,0 +1,932 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1. 远程仓库建立（以 github 为例）
+创建 SSH Key
+
+
+打开 git Bash（linux打开shell），使用 $ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;创建 SSH Key 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。如果一切顺利的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 学习：远程仓库使用">
+<meta property="og:url" content="http://blog.jxdjayden.cn/2016/07/29/git/git学习之远程仓库使用/index.html">
+<meta property="og:site_name" content="代码与胡说">
+<meta property="og:description" content="1. 远程仓库建立（以 github 为例）
+创建 SSH Key
+
+
+打开 git Bash（linux打开shell），使用 $ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;创建 SSH Key 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。如果一切顺利的">
+<meta property="og:updated_time" content="2016-08-03T16:09:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git 学习：远程仓库使用">
+<meta name="twitter:description" content="1. 远程仓库建立（以 github 为例）
+创建 SSH Key
+
+
+打开 git Bash（linux打开shell），使用 $ ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;创建 SSH Key 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。如果一切顺利的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.jxdjayden.cn/2016/07/29/git/git学习之远程仓库使用/"/>
+
+  <title> git 学习：远程仓库使用 | 代码与胡说 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-76440232-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">代码与胡说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我只负责清心直说，伟大梦想最初听来大概也差不多。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                git 学习：远程仓库使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-29T22:59:33+08:00" content="2016-07-29">
+              2016-07-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/29/git/git学习之远程仓库使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/29/git/git学习之远程仓库使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-远程仓库建立（以-github-为例）"><a href="#1-远程仓库建立（以-github-为例）" class="headerlink" title="1. 远程仓库建立（以 github 为例）"></a>1. 远程仓库建立（以 github 为例）</h1><ol>
+<li>创建 SSH Key</li>
+</ol>
+<ul>
+<li>打开 git Bash（linux打开shell），使用 <code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code>创建 SSH Key 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人。</li>
+</ul>
+<a id="more"></a>
+<ol>
+<li>登录 Github ，打开 “Account settings”，“SSH Keys” 页面：然后，点 “Add SSH Key”，填上任意 Title，在 Key 文本框里粘贴 id_rsa.pub 文件的内容。</li>
+<li>创建 Github 仓库</li>
+</ol>
+<ul>
+<li>登陆 GitHub，然后，在右上角找到 “Create a new repo” 按钮，创建一个新的仓库在 Repository name 填入 learngit，其他保持默认设置，点击 “Create repository” 按钮，就成功地创建了一个新的 Git 仓库。</li>
+</ul>
+<ol>
+<li>与本地的仓库连接</li>
+</ol>
+<ul>
+<li>在本地的仓库中运行 <code>$ git remote add origin git@github.com:yourgithubname/learngit.git</code> 命令；添加后，远程库的名字就是 origin，这是 Git 默认的叫法，也可以改成别的，但是 origin 这个名字一看就知道是远程库。</li>
+</ul>
+<ol>
+<li><p>把本地库的内容推送到远程库上：</p>
+ <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div><div class="line">The authenticity of host <span class="string">'github.com (192.30.252.128)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes</div><div class="line">Warning: Permanently added 'github.com,192.30.252.128<span class="string">' (RSA) to the list of known hosts.</span></div><div class="line">Counting objects: 19, done.</div><div class="line">Delta compression using up to 4 threads.</div><div class="line">Compressing objects: 100% (13/13), done.</div><div class="line">Writing objects: 100% (19/19), 1.55 KiB | 0 bytes/s, done.</div><div class="line">Total 19 (delta 4), reused 0 (delta 0)</div><div class="line">To git@github.com:jayden-J/learngit.git</div><div class="line"></div><div class="line"> *[new branch]      master -&gt; master</div><div class="line">Branch master set up to track remote branch master from origin.</div></pre></td></tr></table></figure>
+</li>
+<li><p>从现在起，只要本地作了提交，就可以通过命令：<code>git push origin master</code>把本地master分支的最新修改推送至 GitHub.<br>当你第一次使用 Git 的 clone 或者 push 命令连接 GitHub 时，会得到一个警告：</p>
+<blockquote>
+<p>The authenticity of host ‘github.com (xx.xx.xx.xx)’ can’t be established.<br><br>RSA key fingerprint is xx.xx.xx.xx.xx.<br><br>Are you sure you want to continue connecting (yes/no)?</p>
+</blockquote>
+</li>
+</ol>
+<p>这是因为 Git 使用 SSH 连接，而 SSH 连接在第一次验证 GitHub 服务器的 Key 时，需要你确认 GitHub 的 Key 的指纹信息是否真的来自 GitHub 的服务器，输入 yes 回车即可。</p>
+<h1 id="2-从远程库克隆"><a href="#2-从远程库克隆" class="headerlink" title="2. 从远程库克隆"></a>2. 从远程库克隆</h1><p>假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆。</p>
+<ol>
+<li>登陆 Github ,创建一个新的仓库 gitskills 。</li>
+<li>在本地使用命令 <code>git clone</code> 克隆一个本地库。<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git@github.com:jayden-J/gitskills.git</div><div class="line">Cloning into <span class="string">'gitskills'</span>...</div><div class="line">Warning: Permanently added the RSA host key <span class="keyword">for</span> IP address <span class="string">'192.30.252.129'</span> to the list of known hosts.</div><div class="line">remote: Counting objects: 3, done.</div><div class="line">remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</div><div class="line">Receiving objects: 100% (3/3), done.</div><div class="line">Checking connectivity... done.</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="3-分支管理"><a href="#3-分支管理" class="headerlink" title="3. 分支管理"></a>3. 分支管理</h1><ol>
+<li><p>创建分支,使用 <code>git checkout -b name</code>。</p>
+ <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b dev</div><div class="line">Switched to a new branch <span class="string">'dev'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>查看分支，使用 <code>git branch</code>。git branch 命令会列出所有分支，当前分支前面会标一个*号。 </p>
+ <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">*dev</div><div class="line">master</div></pre></td></tr></table></figure>
+</li>
+<li><p>合并分支，<code>git merge</code> 命令用于合并指定分支到当前分支。</p>
+ <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git merge dev</div><div class="line">Updating d6f1ed3..177508b</div><div class="line">Fast-forward</div><div class="line">README.md | 3 ++-</div><div class="line">1 file changed, 2 insertions(+), 1 deletion(-)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>注意到上面的 Fast-forward 信息，Git 告诉我们，这次合并是“快进模式”，也就是直接把 master 指向 dev 的当前提交，所以合并速度非常快。</em></p>
+<ol>
+<li><p>删除分支，使用 <code>git branch -d name</code> 命令。</p>
+ <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch <span class="_">-d</span> dev</div><div class="line">Deleted branch dev (was 177508b).</div></pre></td></tr></table></figure>
+</li>
+<li><p>解决分支冲突</p>
+<ul>
+<li>创建新的分支 featurel 并修改 README.md 内容后提交修改。</li>
+<li>切换到 master 分支并修改一下内容。</li>
+<li><p>这种情况下，Git 无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突。   </p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git merge featurel</div><div class="line">Auto-merging README.md</div><div class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> README.md</div><div class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看 readme.md 的文件内容：</p>
+<blockquote>
+<p>#gitskills<br><br>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br><br>Creating a new branch is quick &amp; simple.<br><br> =======<br><br>Creating a new branch is quick AND simple.<br><br>>>>>>>>featurel</p>
+</blockquote>
+</li>
+<li><p>Git 用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，我们修改成“ Creating a new branch is quick and simple.  ”后保存。然后提交。</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"conflict fixed"</span></div><div class="line">[master b1ebfb2] conflict fixed</div></pre></td></tr></table></figure>
+</li>
+<li><p>用 <code>git log --graph</code> 命令可以看到分支合并图。</p>
+</li>
+<li>最后删除分支 featurel 。</li>
+</ul>
+</li>
+</ol>
+<h1 id="4-分支管理策略"><a href="#4-分支管理策略" class="headerlink" title="4. 分支管理策略"></a>4. 分支管理策略</h1><ol>
+<li><p>在合并分支时，如果使用 <em>–no-ff</em> 方式的 git merge ，Git 就会在 merge 时生成一个新的 commit ，这样，从分支历史上就可以看出分支信息。</p>
+<ul>
+<li>创建分支 dev ，修改 readme.md 文件内容，并提交 commit 。</li>
+<li>切换回 master ，准备合并 dev 分支，请注意 –no-ff 参数，表示禁用 Fast forward 。    <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git merge --no-ff -m <span class="string">"merge with no-ff"</span> dev</div><div class="line">Merge made by the <span class="string">'recursive'</span> strategy.</div><div class="line"> readme.md | 1 +</div><div class="line"> 1 file changed, 1 insertion(+)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>分支策略</p>
+</li>
+</ol>
+<p><em>master 分支必须是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活。工作都在 dev 分支上，也就是说，dev 分支是不稳定的，到某个时候，比如 1.0 版本发布时，再把 dev 分支合并到 master 上，在 master 分支发布 1.0 版本。</em></p>
+<ol>
+<li><p>当手头工作没有完成时，先把工作现场 git stash 一下，然后去修复 bug ，修复后，可以用 git stash list 查看。想要恢复，一是用 git stash apply 恢复，但是恢复后，stash 内容并不删除，你需要用 git stash drop 来删除；另一种方式是用 git stash pop ，恢复的同时把 stash 内容也删了。</p>
+</li>
+<li><p>Feature 分支</p>
+<ul>
+<li>每添加一个新功能，最好新建一个 feature 分支，在上面开发，完成后，合并，最后，删除该 feature 分支。</li>
+<li><p>创建新分支,并创建新的文件，然后提交 commit 。</p>
+  <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b feature-valcan</div><div class="line">Switched to a new branch <span class="string">'feature-valcan'</span></div></pre></td></tr></table></figure>
+  <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git add valcan.md</div><div class="line">$ git status</div><div class="line">On branch feature-valcan</div><div class="line">Changes to be committed:</div><div class="line">  (use <span class="string">"git reset HEAD &lt;file&gt;..."</span> to unstage)</div><div class="line">new file:   valcan.md</div></pre></td></tr></table></figure>
+  <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"add feature vulcan"</span></div><div class="line">[feature-valcan 34b1ae9] add feature vulcan</div><div class="line"> 1 file changed, 1 insertion(+)</div><div class="line"> create mode 100644 valcan.md</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果要丢弃一个没有被合并过的分支，可以通过 g<code>it branch -D &lt;name&gt;</code> 强行删除。 </p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch -D feature-valcan</div><div class="line">Deleted branch feature-valcan (was 34b1ae9).</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>多人协作</p>
+<ul>
+<li><p>要查看远程库的信息，用 <code>git remote</code> 。更详细的信息可以使用 <code>gti remote -v</code> 查看。</p>
+  <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote</div><div class="line">origin</div></pre></td></tr></table></figure>
+  <figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div><div class="line">origin  git@github.com:jayden-J/learngit.git (fetch)</div><div class="line">origin  git@github.com:jayden-J/learngit.git (push)</div></pre></td></tr></table></figure>
+</li>
+<li><p>推送分支</p>
+<ul>
+<li>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，<code>git push origin &lt;branch name&gt;</code>，Git就会把该分支推送到远程库对应的远程分支上.</li>
+<li>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？<blockquote>
+<p>master分支是主分支，因此要时刻与远程同步；<br><br>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；<br><br>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；<br><br>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>参考：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">《Git 教程》</a>，by 廖雪峰</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/29/git/git学习之git基本使用/" rel="next" title="git 学习：git 基本使用">
+                <i class="fa fa-chevron-left"></i> git 学习：git 基本使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/31/git/git学习之标签管理及自定义/" rel="prev" title="git 学习：标签管理及自定义">
+                git 学习：标签管理及自定义 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/29/git/git学习之远程仓库使用/"
+           data-title="git 学习：远程仓库使用" data-url="http://blog.jxdjayden.cn/2016/07/29/git/git学习之远程仓库使用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="江晓东" />
+          <p class="site-author-name" itemprop="name">江晓东</p>
+          <p class="site-description motion-element" itemprop="description">记录个人的前端学习记录以及其他。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jayden-J" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jxdjayden.cn/" target="_blank" title="简历">
+                  
+                    <i class="fa fa-fw fa-paper-plane"></i>
+                  
+                  简历
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-远程仓库建立（以-github-为例）"><span class="nav-number">1.</span> <span class="nav-text">1. 远程仓库建立（以 github 为例）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-从远程库克隆"><span class="nav-number">2.</span> <span class="nav-text">2. 从远程库克隆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-分支管理"><span class="nav-number">3.</span> <span class="nav-text">3. 分支管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-分支管理策略"><span class="nav-number">4.</span> <span class="nav-text">4. 分支管理策略</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江晓东</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jxjaydne"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

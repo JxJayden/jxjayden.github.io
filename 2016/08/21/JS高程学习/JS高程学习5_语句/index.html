@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="ECMAScript 规定了一组语句，也称为流控制语句。语句定义了 ECMAScript 中的主要语法，语句通常用一或多个关键字来完成任务。
+1. if 语句语法：if(condition) statement1 else statement2 。condition 可以是任意表达式，而且对整个表达式求值的结果不一定是布尔值，ECMAScript 会调用 Boolean 转换函数将这个表达式的结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 高程学习 5 ：语句">
+<meta property="og:url" content="http://blog.jxdjayden.cn/2016/08/21/JS高程学习/JS高程学习5_语句/index.html">
+<meta property="og:site_name" content="代码与胡说">
+<meta property="og:description" content="ECMAScript 规定了一组语句，也称为流控制语句。语句定义了 ECMAScript 中的主要语法，语句通常用一或多个关键字来完成任务。
+1. if 语句语法：if(condition) statement1 else statement2 。condition 可以是任意表达式，而且对整个表达式求值的结果不一定是布尔值，ECMAScript 会调用 Boolean 转换函数将这个表达式的结果">
+<meta property="og:updated_time" content="2016-08-21T04:35:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 高程学习 5 ：语句">
+<meta name="twitter:description" content="ECMAScript 规定了一组语句，也称为流控制语句。语句定义了 ECMAScript 中的主要语法，语句通常用一或多个关键字来完成任务。
+1. if 语句语法：if(condition) statement1 else statement2 。condition 可以是任意表达式，而且对整个表达式求值的结果不一定是布尔值，ECMAScript 会调用 Boolean 转换函数将这个表达式的结果">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.jxdjayden.cn/2016/08/21/JS高程学习/JS高程学习5_语句/"/>
+
+  <title> JS 高程学习 5 ：语句 | 代码与胡说 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-76440232-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">代码与胡说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我只负责清心直说，伟大梦想最初听来大概也差不多。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS 高程学习 5 ：语句
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-21T01:21:34+08:00" content="2016-08-21">
+              2016-08-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS高程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">JS高程学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/21/JS高程学习/JS高程学习5_语句/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/21/JS高程学习/JS高程学习5_语句/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ECMAScript 规定了一组语句，也称为流控制语句。语句定义了 ECMAScript 中的主要语法，语句通常用一或多个关键字来完成任务。</p>
+<h2 id="1-if-语句"><a href="#1-if-语句" class="headerlink" title="1. if 语句"></a>1. if 语句</h2><p>语法：<code>if(condition) statement1 else statement2</code> 。condition 可以是任意表达式，而且对整个表达式求值的结果不一定是布尔值，ECMAScript 会调用 Boolean 转换函数将这个表达式的结果转换为一个布尔值，如果对 condition 求值的结果为 true，则执行 statement1 ，否则执行 statement2 。statement1 和 statement2 语句可以是一行代码，或则是一个代码块，但是建议使用代码块（用花括号括起来的代码），方便他人阅读源码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(i&gt;<span class="number">25</span>)&#123;</div><div class="line">  alert(<span class="string">"i 大于 25"</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(i&lt;<span class="number">0</span>)&#123;</div><div class="line">  alert(<span class="string">"i 小于 0"</span>)；</div><div class="line">&#125; <span class="keyword">else</span>&#123;</div><div class="line">  alert(<span class="string">"i 大于 0，小于 25"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2-do-while-语句"><a href="#2-do-while-语句" class="headerlink" title="2. do-while 语句"></a>2. do-while 语句</h2><p>do-while 语句是一种后测试循环语句，只有在循环体中的代码被执行后，才会测试出口条件。也就是说在对条件表达式求值之前，循环体内的代码至少会被执行一次。</p>
+<p>语法及实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">  statement</div><div class="line">&#125; <span class="keyword">while</span> (expression)</div><div class="line"></div><div class="line"><span class="comment">//示例</span></div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">  i+=<span class="number">2</span>;</div><div class="line">&#125; <span class="keyword">while</span>(i&lt;<span class="number">10</span>);</div></pre></td></tr></table></figure>
+<h2 id="3-while-语句"><a href="#3-while-语句" class="headerlink" title="3. while 语句"></a>3. while 语句</h2><p>while 属于前测试语句，也就是说，在循环体内的代码被执行前，就会对条件求值。所以，循环体内的代码可能永远不被执行。语法：<code>while(expression) statement</code> 。实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(i&lt;<span class="number">10</span>)&#123;</div><div class="line">i += <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-for-语句"><a href="#4-for-语句" class="headerlink" title="4. for 语句"></a>4. for 语句</h2><p>for 语句也是前测试循环语句，但它可以在执行循环之前初始化变量和定义循环后要执行的代码。语法及实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//语法</span></div><div class="line"><span class="keyword">for</span> (initialization;expression;post-loop-exression) statement</div><div class="line"><span class="comment">//实例</span></div><div class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; count;i++)&#123;</div><div class="line">  alert(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>只有当条件表达式（i&lt;count）返回 true 的时候才会进入 for 循环，如果执行了循环体中的代码，则一定会对循环后的表达式（i++）求值。</p>
+<p>由于 ECMAScript 中不存在块级作用域，所以在循环内部定义的变量在外部也可以访问到。如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; count;i++)&#123;alert(i);&#125;</div><div class="line">alert(i); <span class="comment">//10</span></div></pre></td></tr></table></figure>
+<h2 id="5-for-in-语句"><a href="#5-for-in-语句" class="headerlink" title="5. for-in 语句"></a>5. for-in 语句</h2><p>for-in 是精准的迭代语句，可以用来枚举对象的属性。实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> propName <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</div><div class="line">  <span class="built_in">document</span>.write(propName);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-label-语句"><a href="#6-label-语句" class="headerlink" title="6. label 语句"></a>6. label 语句</h2><p>使用 label 语句可以在代码中添加标签，以便将来使用。语法：<code>label:statement</code> 。实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">start:<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; count;i++)&#123;alert(i);&#125;</div></pre></td></tr></table></figure>
+<p>这个例子中定义的 start 标签可以在将来由 break 或 continue 语句引用。</p>
+<h2 id="7-break-和-continue-语句"><a href="#7-break-和-continue-语句" class="headerlink" title="7. break 和 continue 语句"></a>7. break 和 continue 语句</h2><p>break 和 continue 语句用于在循环中精确地控制代码的执行。其中 break 语句会立即退出循环，强制继续执行循环后面的语句。而 continue 语句虽然也是立即退出循环，但退出循环后会从循环的顶部继续执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//break</span></div><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt; <span class="number">10</span>;i++)&#123;</div><div class="line">  <span class="keyword">if</span>(i % <span class="number">5</span> == <span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  &#125;</div><div class="line">  num++;</div><div class="line">&#125;</div><div class="line">alert(num); <span class="comment">//4</span></div><div class="line"></div><div class="line"><span class="comment">//continue</span></div><div class="line">num = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>;j &lt; <span class="number">10</span>;j++)&#123;</div><div class="line"><span class="keyword">if</span>(j % <span class="number">5</span> == <span class="number">0</span>)&#123;</div><div class="line">  <span class="keyword">continue</span>;</div><div class="line">&#125;</div><div class="line">num++;</div><div class="line">&#125;</div><div class="line">alert(num); <span class="comment">//8</span></div></pre></td></tr></table></figure>
+<h2 id="8-with-语句"><a href="#8-with-语句" class="headerlink" title="8. with 语句"></a>8. with 语句</h2><p>with 语句的作用是将代码的作用域设置到一个特定的对象中，语法：<code>with (expression) statement</code>。实例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span>(location)&#123;</div><div class="line"><span class="keyword">var</span> qs = search.substring(<span class="number">1</span>);</div><div class="line"><span class="keyword">var</span> hostName = hostname;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="keyword">var</span> qs = location.search.substring(<span class="number">1</span>);</div><div class="line"><span class="keyword">var</span> hostName = location.hostName;</div></pre></td></tr></table></figure>
+<h2 id="9-switch-语句"><a href="#9-switch-语句" class="headerlink" title="9. switch 语句"></a>9. switch 语句</h2><p>switch 语句也是流控制语句。语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>(expression)&#123;</div><div class="line">  <span class="keyword">case</span> value:statement;</div><div class="line">  <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> value:statement;</div><div class="line">  <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> value:statement;</div><div class="line">  <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">default</span>:statement;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>(i)&#123;</div><div class="line">  <span class="keyword">case</span> <span class="number">25</span>:</div><div class="line">    <span class="comment">/* 合并两种情形 */</span></div><div class="line">  <span class="keyword">case</span> <span class="number">35</span>:</div><div class="line">    alert(<span class="string">"25 or 35"</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> <span class="number">45</span>:</div><div class="line">    alert(<span class="string">"45"</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">default</span>:</div><div class="line">    alert(<span class="string">"other"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在 switch 语句中可以使用任意数据类型，并且每个 case 的值不一定是常量，可以是变量、表达式。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/13/JS高程学习/JS高程学习4_操作符/" rel="next" title="JS 高程学习 4：操作符">
+                <i class="fa fa-chevron-left"></i> JS 高程学习 4：操作符
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/30/ES6/ES6的generator函数/" rel="prev" title="ES6 的 generator 函数">
+                ES6 的 generator 函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/21/JS高程学习/JS高程学习5_语句/"
+           data-title="JS 高程学习 5 ：语句" data-url="http://blog.jxdjayden.cn/2016/08/21/JS高程学习/JS高程学习5_语句/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="江晓东" />
+          <p class="site-author-name" itemprop="name">江晓东</p>
+          <p class="site-description motion-element" itemprop="description">记录个人的前端学习记录以及其他。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jayden-J" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jxdjayden.cn/" target="_blank" title="简历">
+                  
+                    <i class="fa fa-fw fa-paper-plane"></i>
+                  
+                  简历
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-if-语句"><span class="nav-number">1.</span> <span class="nav-text">1. if 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-do-while-语句"><span class="nav-number">2.</span> <span class="nav-text">2. do-while 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-while-语句"><span class="nav-number">3.</span> <span class="nav-text">3. while 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-for-语句"><span class="nav-number">4.</span> <span class="nav-text">4. for 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-for-in-语句"><span class="nav-number">5.</span> <span class="nav-text">5. for-in 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-label-语句"><span class="nav-number">6.</span> <span class="nav-text">6. label 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-break-和-continue-语句"><span class="nav-number">7.</span> <span class="nav-text">7. break 和 continue 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-with-语句"><span class="nav-number">8.</span> <span class="nav-text">8. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-switch-语句"><span class="nav-number">9.</span> <span class="nav-text">9. switch 语句</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江晓东</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jxjaydne"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

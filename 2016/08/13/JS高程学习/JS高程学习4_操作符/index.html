@@ -1,0 +1,909 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1. 一元操作符只能操作一个值的操作符叫做一元操作符。
+1. 递增和递减操作符递增和递减操作符有两个版本：前置型和后置型。执行前置递增和递减操作时，变量的值都是在语句被求值之前改变的。而后置递减和递减的操作是在包含它们的语句被求值后才执行的。
+123456789101112131415161718//前置var age = 29；var tage = --age + 2；alert(age); /">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 高程学习 4：操作符">
+<meta property="og:url" content="http://blog.jxdjayden.cn/2016/08/13/JS高程学习/JS高程学习4_操作符/index.html">
+<meta property="og:site_name" content="代码与胡说">
+<meta property="og:description" content="1. 一元操作符只能操作一个值的操作符叫做一元操作符。
+1. 递增和递减操作符递增和递减操作符有两个版本：前置型和后置型。执行前置递增和递减操作时，变量的值都是在语句被求值之前改变的。而后置递减和递减的操作是在包含它们的语句被求值后才执行的。
+123456789101112131415161718//前置var age = 29；var tage = --age + 2；alert(age); /">
+<meta property="og:updated_time" content="2016-08-14T14:58:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 高程学习 4：操作符">
+<meta name="twitter:description" content="1. 一元操作符只能操作一个值的操作符叫做一元操作符。
+1. 递增和递减操作符递增和递减操作符有两个版本：前置型和后置型。执行前置递增和递减操作时，变量的值都是在语句被求值之前改变的。而后置递减和递减的操作是在包含它们的语句被求值后才执行的。
+123456789101112131415161718//前置var age = 29；var tage = --age + 2；alert(age); /">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.jxdjayden.cn/2016/08/13/JS高程学习/JS高程学习4_操作符/"/>
+
+  <title> JS 高程学习 4：操作符 | 代码与胡说 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-76440232-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">代码与胡说</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我只负责清心直说，伟大梦想最初听来大概也差不多。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS 高程学习 4：操作符
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-13T07:58:30+08:00" content="2016-08-13">
+              2016-08-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS高程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">JS高程学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/13/JS高程学习/JS高程学习4_操作符/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/13/JS高程学习/JS高程学习4_操作符/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-一元操作符"><a href="#1-一元操作符" class="headerlink" title="1. 一元操作符"></a>1. 一元操作符</h2><p>只能操作一个值的操作符叫做一元操作符。</p>
+<h3 id="1-递增和递减操作符"><a href="#1-递增和递减操作符" class="headerlink" title="1. 递增和递减操作符"></a>1. 递增和递减操作符</h3><p>递增和递减操作符有两个版本：前置型和后置型。执行前置递增和递减操作时，变量的值都是在语句被求值之前改变的。而后置递减和递减的操作是在包含它们的语句被求值后才执行的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//前置</span></div><div class="line"><span class="keyword">var</span> age = <span class="number">29</span>；</div><div class="line"><span class="keyword">var</span> tage = --age + <span class="number">2</span>；</div><div class="line"></div><div class="line">alert(age); <span class="comment">//28</span></div><div class="line">alert(tage); <span class="comment">//30</span></div><div class="line"></div><div class="line"><span class="comment">//前置的另一个例子</span></div><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> num3 = --num1 + num2; <span class="comment">// num3 = 21</span></div><div class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// num4 = 21</span></div><div class="line"></div><div class="line"><span class="comment">//后置</span></div><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// num3 = 22</span></div><div class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// num4 = 21</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>如果将操作符应用于一个不包含有效数字字符的字符串时，会将变量的值设置为 NaN。<br>如果将操作符应用在对象上，先调用对象的 valueof() 方法以取得一个可供操作的值，然后对该值应用操作符。如果结果是 NaN，则再调用 toString() 方法后再应用前述规则。</p>
+<h3 id="2-一元加和减操作符"><a href="#2-一元加和减操作符" class="headerlink" title="2. 一元加和减操作符"></a>2. 一元加和减操作符</h3><p>把一元加操作符放在数值前面，对数值不会产生影响。但是对非数值应用一元加操作符时，该操作符会像 Number() 转型函数一样对这个值执行转换。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 = <span class="string">"01"</span>;</div><div class="line"><span class="keyword">var</span> s2 = <span class="string">"1.1"</span>;</div><div class="line"><span class="keyword">var</span> s3 = <span class="string">"z"</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> f = <span class="number">1.1</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">-1</span>;&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">s1 = +s1; <span class="comment">//1</span></div><div class="line">s2 = +s2; <span class="comment">//1.1</span></div><div class="line">s3 = +s3; <span class="comment">//NaN</span></div><div class="line">b = +b; <span class="comment">//0</span></div><div class="line">f = +f; <span class="comment">//1.1</span></div><div class="line">o = +o; <span class="comment">//-1</span></div></pre></td></tr></table></figure>
+<p>一元减操作符应用于数值时，该值会变为负数。在应用于非数值时，遵循和一元加操作符相同的规则。</p>
+<h2 id="2-位操作符"><a href="#2-位操作符" class="headerlink" title="2. 位操作符"></a>2. 位操作符</h2><p>位操作符用于在最基本的层次上，即按内存中表示数值的位来操作数值。（略过 ECMAScript 中数值的存储方式等内容。）注意以下的操作符都是在二进制下计算然后返回十进制的。</p>
+<h3 id="1-按位非（NOT）"><a href="#1-按位非（NOT）" class="headerlink" title="1. 按位非（NOT）"></a>1. 按位非（NOT）</h3><p>按位非操作符由一个波浪线（~）表示，执行按位非的结果就是返回数值的反码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 =<span class="number">25</span>; <span class="comment">//二进制按位非</span></div><div class="line"><span class="keyword">var</span> num2 = ~num1; <span class="comment">//-26</span></div></pre></td></tr></table></figure>
+<h3 id="2-按位与（AND）"><a href="#2-按位与（AND）" class="headerlink" title="2. 按位与（AND）"></a>2. 按位与（AND）</h3><p>按位与操作符由一个 &amp; 字符表示，它有两个操作符数。按位与操作只在两个数值的对应位都是 1 时才返回 1，任何一位是 0 ，都返回 0。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="number">25</span> &amp; <span class="number">3</span>;<span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<h3 id="3-按位或（OR）"><a href="#3-按位或（OR）" class="headerlink" title="3. 按位或（OR）"></a>3. 按位或（OR）</h3><p>按位或操作符由一个竖线（|）符号表示，同样也有两个操作数。按位或操作在有一个位是 1 的情况下返回 1 ，只有在两个位都是 0 时才返回 0。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="number">25</span> | <span class="number">3</span>; <span class="comment">//27</span></div></pre></td></tr></table></figure>
+<h3 id="4-按位异或（XOR）"><a href="#4-按位异或（XOR）" class="headerlink" title="4. 按位异或（XOR）"></a>4. 按位异或（XOR）</h3><p>按位异或操作符由一个插入符号（^）表示。按位异或操作在两个数值对应位上只有一个 1 时返回 1。如果对应位的两位都是 1 或 0，则返回 0 。</p>
+<h3 id="5-左移"><a href="#5-左移" class="headerlink" title="5. 左移"></a>5. 左移</h3><p>左移操作符由两个小于号（&lt;&lt;）表示，这个操作符会将数值的所有位向左移动指定的位数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> newValue = oldValue &lt;&lt; <span class="number">5</span>; <span class="comment">// 64</span></div></pre></td></tr></table></figure>
+<h3 id="6-有符号的右移"><a href="#6-有符号的右移" class="headerlink" title="6. 有符号的右移"></a>6. 有符号的右移</h3><p>有符号的右移操作符用两个大于号（&gt;&gt;）表示。这个操作符会将数值向右移动，但保留符号位。</p>
+<h3 id="7-无符号右移"><a href="#7-无符号右移" class="headerlink" title="7. 无符号右移"></a>7. 无符号右移</h3><p>无符号右移用三个大于号表示。这个操作符会将数值的所有 32 位都向右移动，对正数来说，无符号右移的结果与有符号右移相同，但是将负数无符号右移，结果就不同了，无符号右移是以 0 来填充空位。而不是像有符号右移那样以符号位的值来填充空位。无符号右移会把附属的二进制码当成正数的二进制码，而且，由于负数以其绝对值的二进制补码形式表示，因此会导致无符号右移后的结果非常大。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> old = <span class="number">-64</span>;</div><div class="line"><span class="keyword">var</span> newValue = old &gt;&gt;&gt; <span class="number">5</span>; <span class="comment">//134217726</span></div></pre></td></tr></table></figure>
+<h2 id="3-布尔操作符"><a href="#3-布尔操作符" class="headerlink" title="3. 布尔操作符"></a>3. 布尔操作符</h2><h3 id="1-逻辑非"><a href="#1-逻辑非" class="headerlink" title="1. 逻辑非"></a>1. 逻辑非</h3><p>逻辑非操作符用 ! 表示，可以应用于 ECMAScript 中的任何值。逻辑非操作符首先会将它的操作数准换为一个布尔值，然后再对其求反。逻辑非遵循下面的规则。</p>
+<ul>
+<li>返回 true<ul>
+<li>操作数是一个空字符串；</li>
+<li>操作数是数值 0；</li>
+<li>操作数是 null；</li>
+<li>操作数是 NaN；</li>
+<li>操作数是 undefined；</li>
+</ul>
+</li>
+<li>返回 false<ul>
+<li>操作数是一个对象；</li>
+<li>操作数是一个非空字符串；</li>
+<li>操作数是任意非零数值（包括 infinity）；</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-逻辑与"><a href="#2-逻辑与" class="headerlink" title="2. 逻辑与"></a>2. 逻辑与</h3><p>逻辑与用 &amp;&amp; 表示，有两个操作数。两个操作数同为 true ，则结果返回 true。否则返回 false。</p>
+<p>逻辑与操作在有一个操作数不是布尔值的情况下，则不一定返回布尔值。它遵循下列规则：</p>
+<ul>
+<li>第一个操作数是对象，则返回第二个操作数。</li>
+<li>第二个操作数是对象，则只有在第一个操作数的求值结果为 true  的情况下才会返回该对象。</li>
+<li>如果两个操作数都是对象， 则返回第二个操作数。</li>
+<li>如果有一个操作数是 null ，则返回 null。</li>
+<li>如果有一个操作数是 NaN，则返回 NaN。</li>
+<li>如果有一个操作数是 undefined，则返回 undefined。</li>
+</ul>
+<p>逻辑与操作属于短路操作，即如果第一个操作数能够决定结果，那么就不会对第二个操作数求值。</p>
+<h3 id="3-逻辑或"><a href="#3-逻辑或" class="headerlink" title="3. 逻辑或"></a>3. 逻辑或</h3><p>逻辑或操作符用 || 表示，有两个操作数。</p>
+<p>逻辑或操作与逻辑与操作相似，如果有一个操作数不是布尔值，逻辑或也不一定返回布尔值。它遵循下列规则：</p>
+<ul>
+<li>如果第一个操作数是对象，则返回第一个对象。</li>
+<li>如果第一个操作数的求值结果为 false ，则返回第二个操作数。</li>
+<li>如果两个操作数都是对象，则返回第一个操作数。</li>
+<li>如果两个操作数都是 null，返回 null。</li>
+<li>如果两个操作数都是 NaN，返回 NaN。</li>
+<li>如果两个操作数都是 undefined ，返回 undefined。</li>
+</ul>
+<p>我们可以利用逻辑或来避免为变量赋 null 或 undefined 值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> value = preferredObject || backup;</div><div class="line"><span class="comment">// 变量 value 将被赋予等号后面两个值的其中一个，变量 preferredObject 中包含优先赋给变量 value 的值，变量 backup 负责在 preferredObject 中不包含有效值的情况下提供后备值。</span></div></pre></td></tr></table></figure>
+<h2 id="4-乘性操作符"><a href="#4-乘性操作符" class="headerlink" title="4. 乘性操作符"></a>4. 乘性操作符</h2><h3 id="1-乘法"><a href="#1-乘法" class="headerlink" title="1. 乘法"></a>1. 乘法</h3><p>乘法操作（*）遵循下列规则（仅列出特殊情况）：</p>
+<ul>
+<li>乘积超出 ECMAScript 数值的表示范围，则返回 Infinity 或 -Infinity。</li>
+<li>如果有一个操作数是 NaN，则结果是 NaN。</li>
+<li>如果是 Infinity 与 0 相乘，则返回 NaN。</li>
+<li>如果是 Infinity 与非 0 数值相乘，则返回 Infinity 或 -Infinity。</li>
+<li>如果是 Infinity 与 Infinity 相乘，返回 Infinity。</li>
+<li>如果有一个操作数不是数值，则在后台调用 Number() 函数将其转换为数值，然后再应用上面的规则。</li>
+</ul>
+<h3 id="2-除法"><a href="#2-除法" class="headerlink" title="2. 除法"></a>2. 除法</h3><p>除法操作符用一个斜线符号（/）表示，规则不再列出注意 Infinity 的除法就好了。</p>
+<h3 id="3-求模"><a href="#3-求模" class="headerlink" title="3. 求模"></a>3. 求模</h3><p>求模（余数）操作符用一个百分号（%）表示，如 <code>var result = 26 %  5</code>，结果是 1。</p>
+<h2 id="5-加性操作符"><a href="#5-加性操作符" class="headerlink" title="5. 加性操作符"></a>5. 加性操作符</h2><h3 id="1-加法（-）"><a href="#1-加法（-）" class="headerlink" title="1. 加法（+）"></a>1. 加法（+）</h3><p>对于有一个操作符是字符串的情况，则有：1. 两个操作数都是字符串，则将第二个字符串和第一个字符串拼接起来；如果只有一个操作数是字符串，则将另一个操作数转换为字符串，然后将它们拼接起来。</p>
+<p>如果有一个操作数是对象， 数值或布尔值。则调用它们的 toString 方法取得相应的字符串值，然后再应用上述规则。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="number">5</span> + <span class="number">5</span>; <span class="comment">//10</span></div><div class="line"><span class="keyword">var</span> result1 = <span class="number">5</span> + <span class="string">"5"</span>; <span class="comment">//"55"</span></div></pre></td></tr></table></figure>
+<h3 id="2-减法（-）"><a href="#2-减法（-）" class="headerlink" title="2. 减法（-）"></a>2. 减法（-）</h3><p>如果有一个操作数是字符串，布尔值，null 或 undefined，则先在后台调用 Number() 函数将其转换为数值。然后再计算，如果转换的数值是 NaN，则减法的结果为 NaN。</p>
+<h2 id="6-关系操作符"><a href="#6-关系操作符" class="headerlink" title="6. 关系操作符"></a>6. 关系操作符</h2><p>小于（&lt;），大于（&gt;），小于等于（&lt;=），大于等于（&gt;=）这几个关系操作符用于比较两个值，返回布尔值。</p>
+<ul>
+<li>如果两个操作数都是数值，则执行数值比较。</li>
+<li>两个操作数都是字符串，则比较两个字符串对应的字符编码值。</li>
+<li>如果一个操作数是数值，则将另一个操作数转换为数值，然后在执行数值比较。</li>
+<li>如果一个操作数是对象， 则调用这个对象的 valueof() 方法，然后再比较。如果对象没有 valueof() 方法，则调用 toString() 方法，并用得到的结果根据前面的规则比较。</li>
+<li>如果一个操作数是布尔值，则先将其转换为数值，然后再执行比较。</li>
+</ul>
+<h2 id="7-相等操作符"><a href="#7-相等操作符" class="headerlink" title="7. 相等操作符"></a>7. 相等操作符</h2><h3 id="1-相等和不相等（-和-）"><a href="#1-相等和不相等（-和-）" class="headerlink" title="1. 相等和不相等（== 和 !=）"></a>1. 相等和不相等（== 和 !=）</h3><p>这两个操作符都会先转换操作数，然后再比较他们的相等性。</p>
+<p>这两个操作符在进行比较时需要遵循下列的规则：</p>
+<ul>
+<li>null 和 undefined 是相等的。（一个很奇怪的设定。）</li>
+<li>要比较相等性之前，不能将 null 和 undefined 转换成其他任何值。</li>
+<li>如果有一个操作数是 NaN，则相等操作符返回 false，而不相等操作符返回 true。注意：<strong>NaN 不等于 NaN</strong></li>
+<li>如果两个操作符都是对象，则比较它们是不是同一个对象，如果都指向同一个对象，则相等操作符返回 true，否则，返回 false。</li>
+</ul>
+<h3 id="2-全等和不全等（-和-）"><a href="#2-全等和不全等（-和-）" class="headerlink" title="2. 全等和不全等（=== 和 !== ）"></a>2. 全等和不全等（=== 和 !== ）</h3><p>全等操作符只在两个操作数未经转换就相等的情况下返回 true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = (<span class="string">"55"</span> == <span class="number">55</span>); <span class="comment">//true</span></div><div class="line"><span class="keyword">var</span> result2 = (<span class="string">"55"</span> === <span class="number">55</span>); <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<p>注意：<strong>null !== undefined</strong></p>
+<h2 id="8-条件操作符"><a href="#8-条件操作符" class="headerlink" title="8. 条件操作符"></a>8. 条件操作符</h2><p>直接上代码~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = boolean_expression ? true_value:false_value;</div><div class="line"><span class="comment">//如果 boolean_expression 为 true，则给变量 result 赋予 true_value，否则给变量 result 赋予 false_value。</span></div><div class="line"><span class="keyword">var</span> max = (num1 &gt; num2) ? num1 : num2;</div><div class="line"><span class="comment">//返回 num1 和 num2 之间最大值。</span></div></pre></td></tr></table></figure>
+<h2 id="9-赋值操作符"><a href="#9-赋值操作符" class="headerlink" title="9. 赋值操作符"></a>9. 赋值操作符</h2><p>简单的赋值操作符由等于号（=）表示，其作用就是把右侧的值赋给左侧的变量。如果在等于号之前添加乘性操作符等，就可以完成复合赋值操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">10</span>；</div><div class="line">num += <span class="number">10</span>; <span class="comment">//等于 num = num + 10</span></div></pre></td></tr></table></figure>
+<h2 id="10-逗号操作符"><a href="#10-逗号操作符" class="headerlink" title="10. 逗号操作符"></a>10. 逗号操作符</h2><p>上代码~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 =<span class="number">1</span>,num2 = <span class="number">2</span>;</div><div class="line"><span class="comment">//逗号操作符多用于声明多个表达式。</span></div><div class="line"><span class="keyword">var</span> num = (<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">0</span>); <span class="comment">// num = 0;</span></div><div class="line"><span class="comment">//逗号操作符可以用来赋值，这时总会返回表达式中的最后一项。</span></div></pre></td></tr></table></figure>
+<p>拓展阅读：</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/21650547" target="_blank" rel="external">通过一张简单的图，让你彻底搞懂JS的==运算</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comma_Operator" target="_blank" rel="external">逗号操作符</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/05/JS高程学习/JS高程学习3_数据类型/" rel="next" title="JS 高程学习 3：数据类型">
+                <i class="fa fa-chevron-left"></i> JS 高程学习 3：数据类型
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/21/JS高程学习/JS高程学习5_语句/" rel="prev" title="JS 高程学习 5 ：语句">
+                JS 高程学习 5 ：语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/13/JS高程学习/JS高程学习4_操作符/"
+           data-title="JS 高程学习 4：操作符" data-url="http://blog.jxdjayden.cn/2016/08/13/JS高程学习/JS高程学习4_操作符/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="江晓东" />
+          <p class="site-author-name" itemprop="name">江晓东</p>
+          <p class="site-description motion-element" itemprop="description">记录个人的前端学习记录以及其他。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jayden-J" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://jxdjayden.cn/" target="_blank" title="简历">
+                  
+                    <i class="fa fa-fw fa-paper-plane"></i>
+                  
+                  简历
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-一元操作符"><span class="nav-number">1.</span> <span class="nav-text">1. 一元操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-递增和递减操作符"><span class="nav-number">1.1.</span> <span class="nav-text">1. 递增和递减操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-一元加和减操作符"><span class="nav-number">1.2.</span> <span class="nav-text">2. 一元加和减操作符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-位操作符"><span class="nav-number">2.</span> <span class="nav-text">2. 位操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-按位非（NOT）"><span class="nav-number">2.1.</span> <span class="nav-text">1. 按位非（NOT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-按位与（AND）"><span class="nav-number">2.2.</span> <span class="nav-text">2. 按位与（AND）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-按位或（OR）"><span class="nav-number">2.3.</span> <span class="nav-text">3. 按位或（OR）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-按位异或（XOR）"><span class="nav-number">2.4.</span> <span class="nav-text">4. 按位异或（XOR）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-左移"><span class="nav-number">2.5.</span> <span class="nav-text">5. 左移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-有符号的右移"><span class="nav-number">2.6.</span> <span class="nav-text">6. 有符号的右移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-无符号右移"><span class="nav-number">2.7.</span> <span class="nav-text">7. 无符号右移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-布尔操作符"><span class="nav-number">3.</span> <span class="nav-text">3. 布尔操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-逻辑非"><span class="nav-number">3.1.</span> <span class="nav-text">1. 逻辑非</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-逻辑与"><span class="nav-number">3.2.</span> <span class="nav-text">2. 逻辑与</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-逻辑或"><span class="nav-number">3.3.</span> <span class="nav-text">3. 逻辑或</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-乘性操作符"><span class="nav-number">4.</span> <span class="nav-text">4. 乘性操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-乘法"><span class="nav-number">4.1.</span> <span class="nav-text">1. 乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-除法"><span class="nav-number">4.2.</span> <span class="nav-text">2. 除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-求模"><span class="nav-number">4.3.</span> <span class="nav-text">3. 求模</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-加性操作符"><span class="nav-number">5.</span> <span class="nav-text">5. 加性操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-加法（-）"><span class="nav-number">5.1.</span> <span class="nav-text">1. 加法（+）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-减法（-）"><span class="nav-number">5.2.</span> <span class="nav-text">2. 减法（-）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-关系操作符"><span class="nav-number">6.</span> <span class="nav-text">6. 关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-相等操作符"><span class="nav-number">7.</span> <span class="nav-text">7. 相等操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-相等和不相等（-和-）"><span class="nav-number">7.1.</span> <span class="nav-text">1. 相等和不相等（== 和 !=）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-全等和不全等（-和-）"><span class="nav-number">7.2.</span> <span class="nav-text">2. 全等和不全等（=== 和 !== ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-条件操作符"><span class="nav-number">8.</span> <span class="nav-text">8. 条件操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-赋值操作符"><span class="nav-number">9.</span> <span class="nav-text">9. 赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-逗号操作符"><span class="nav-number">10.</span> <span class="nav-text">10. 逗号操作符</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江晓东</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jxjaydne"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
