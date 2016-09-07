@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[ES6 的 generator 函数]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/30/ES6/ES6%E7%9A%84generator%E5%87%BD%E6%95%B0/</url>
+      <url>http://yoursite.com/2016/08/30/ES6/ES6%E7%9A%84generator%E5%87%BD%E6%95%B0/</url>
       <content type="html"><![CDATA[<p>最近公司让我整理一些文档， 其中有些代码涉及到 ES6 的 generator（生成器）函数，还有 co 函数库，thunkify 函数库等，当时查了一些资料来理解。现在把这些东西整理一下。</p>
 <h2 id="ES6-生成器（Generators）简介"><a href="#ES6-生成器（Generators）简介" class="headerlink" title="ES6 生成器（Generators）简介"></a>ES6 生成器（Generators）简介</h2><p>语法：</p>
 <p><code>function* name([param[, param[, ... param]]]) { statements }</code></p>
@@ -35,7 +35,7 @@
     
     <entry>
       <title><![CDATA[JS 高程学习 5 ：语句]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/21/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A05_%E8%AF%AD%E5%8F%A5/</url>
+      <url>http://yoursite.com/2016/08/21/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A05_%E8%AF%AD%E5%8F%A5/</url>
       <content type="html"><![CDATA[<p>ECMAScript 规定了一组语句，也称为流控制语句。语句定义了 ECMAScript 中的主要语法，语句通常用一或多个关键字来完成任务。</p>
 <h2 id="1-if-语句"><a href="#1-if-语句" class="headerlink" title="1. if 语句"></a>1. if 语句</h2><p>语法：<code>if(condition) statement1 else statement2</code> 。condition 可以是任意表达式，而且对整个表达式求值的结果不一定是布尔值，ECMAScript 会调用 Boolean 转换函数将这个表达式的结果转换为一个布尔值，如果对 condition 求值的结果为 true，则执行 statement1 ，否则执行 statement2 。statement1 和 statement2 语句可以是一行代码，或则是一个代码块，但是建议使用代码块（用花括号括起来的代码），方便他人阅读源码。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(i&gt;<span class="number">25</span>)&#123;</div><div class="line">  alert(<span class="string">"i 大于 25"</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(i&lt;<span class="number">0</span>)&#123;</div><div class="line">  alert(<span class="string">"i 小于 0"</span>)；</div><div class="line">&#125; <span class="keyword">else</span>&#123;</div><div class="line">  alert(<span class="string">"i 大于 0，小于 25"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -69,7 +69,7 @@
     
     <entry>
       <title><![CDATA[JS 高程学习 4：操作符]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/13/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A04_%E6%93%8D%E4%BD%9C%E7%AC%A6/</url>
+      <url>http://yoursite.com/2016/08/13/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A04_%E6%93%8D%E4%BD%9C%E7%AC%A6/</url>
       <content type="html"><![CDATA[<h2 id="1-一元操作符"><a href="#1-一元操作符" class="headerlink" title="1. 一元操作符"></a>1. 一元操作符</h2><p>只能操作一个值的操作符叫做一元操作符。</p>
 <h3 id="1-递增和递减操作符"><a href="#1-递增和递减操作符" class="headerlink" title="1. 递增和递减操作符"></a>1. 递增和递减操作符</h3><p>递增和递减操作符有两个版本：前置型和后置型。执行前置递增和递减操作时，变量的值都是在语句被求值之前改变的。而后置递减和递减的操作是在包含它们的语句被求值后才执行的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//前置</span></div><div class="line"><span class="keyword">var</span> age = <span class="number">29</span>；</div><div class="line"><span class="keyword">var</span> tage = --age + <span class="number">2</span>；</div><div class="line"></div><div class="line">alert(age); <span class="comment">//28</span></div><div class="line">alert(tage); <span class="comment">//30</span></div><div class="line"></div><div class="line"><span class="comment">//前置的另一个例子</span></div><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> num3 = --num1 + num2; <span class="comment">// num3 = 21</span></div><div class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// num4 = 21</span></div><div class="line"></div><div class="line"><span class="comment">//后置</span></div><div class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// num3 = 22</span></div><div class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// num4 = 21</span></div></pre></td></tr></table></figure>
@@ -181,7 +181,7 @@
     
     <entry>
       <title><![CDATA[JS 高程学习 3：数据类型]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/05/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A03_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      <url>http://yoursite.com/2016/08/05/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A03_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
       <content type="html"><![CDATA[<p>ECMAScript 中有五种简单数据类型（也称为基本数据类型）：Undefined，Null，Boolean，Number 和 string ，还有一种复杂数据类型：object 。 来简单了解一下每种数据类型。</p>
 <h2 id="1-typeof-操作符"><a href="#1-typeof-操作符" class="headerlink" title="1. typeof 操作符"></a>1. typeof 操作符</h2><p>typeof 操作符用来检测给定变量的数据类型。typeof 对一个值可能返回下列的某个字符串。    </p>
 <pre><code>- &quot;undefined&quot; : 这个值未定义
@@ -256,7 +256,7 @@
     
     <entry>
       <title><![CDATA[JS 高程学习 2：基本概念]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/04/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A02_%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
+      <url>http://yoursite.com/2016/08/04/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A02_%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
       <content type="html"><![CDATA[<h1 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h1><ol>
 <li><p>区分大小写—— ECMAScript中的一切都区分大小写。</p>
 </li>
@@ -281,7 +281,7 @@
     
     <entry>
       <title><![CDATA[Express 学习记录：Express 的方法]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/03/Express/Express%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      <url>http://yoursite.com/2016/08/03/Express/Express%E7%9A%84%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<h1 id="1-all-方法和-HTTP-动词方法"><a href="#1-all-方法和-HTTP-动词方法" class="headerlink" title="1. all 方法和 HTTP 动词方法"></a>1. all 方法和 HTTP 动词方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.all(<span class="string">'*'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">    res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</div><div class="line">    consloe.log(<span class="string">'Server start'</span>);</div><div class="line">    next();</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">app.get(<span class="string">'/hello'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.end(<span class="string">'hello world'</span>);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>app 的 all 方法表示所有请求都必须通过该中间件，参数中的“*”表示对所有路径有效。app 的 get方法则是只有 get 的 HTTP 请求通过该中间件，它的第一个参数是请求的路径。<br>除了 get 方法以外，Express 还提供 post、put、delete 方法，即HTTP 方法都是 Express 的方法。<br>Express 还允许模式匹配：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/hello/:name'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.end(<span class="string">'hello'</span>+req.params.name+<span class="string">'!'</span>);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
@@ -295,7 +295,7 @@
     
     <entry>
       <title><![CDATA[Express 学习记录：运行原理]]></title>
-      <url>http://blog.jxdjayden.cn/2016/08/01/Express/Express%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/</url>
+      <url>http://yoursite.com/2016/08/01/Express/Express%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/</url>
       <content type="html"><![CDATA[<h1 id="1-底层：http-模块"><a href="#1-底层：http-模块" class="headerlink" title="1. 底层：http 模块"></a>1. 底层：http 模块</h1><p>http 模块生成服务器原始代码如下。createServer 方法表示生成一个 HTTP 服务器实例。该方法接受一个回调函数，该回调函数的参数，分别为代表 HTTP 请求和HTTP 回应的 request 对象和 response 对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app=http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</div><div class="line">    response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</div><div class="line">    response.send(<span class="string">'hello'</span>);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">8000</span>,<span class="string">'localhost'</span>);</div></pre></td></tr></table></figure></p>
 <p>Eepress 框架建立在 node.js 内置的 http 模块上。它的核心是对 http 模块的再包装。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello world!'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">8000</span>);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -311,7 +311,7 @@
     
     <entry>
       <title><![CDATA[JS 高程学习 1：JavaScript 简介]]></title>
-      <url>http://blog.jxdjayden.cn/2016/07/31/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A01_JavaScript%E7%AE%80%E4%BB%8B/</url>
+      <url>http://yoursite.com/2016/07/31/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A01_JavaScript%E7%AE%80%E4%BB%8B/</url>
       <content type="html"><![CDATA[<h1 id="1-JavaScript-简史"><a href="#1-JavaScript-简史" class="headerlink" title="1. JavaScript 简史"></a>1. JavaScript 简史</h1><p>JavaScript 诞生于 1995 年，当时它的主要目的是处理以前由服务器端语言（如 Perl）负责的一些输入验证操作。1997 年，以 JavaScript1.1 为蓝本的建议被提交给了 ECMA，经过数月的努力，完成了 ECMA-262 的新脚本语言的标准。自此以后，浏览器开发商就开始致力于将 ECMAScript 作为各自 JavaScript 实现的基础。<br>如今，JavaScript 已经成为一门功能全面的编程语言，能够处理复杂的计算和交互，拥有了闭包，匿名函数等特性。</p>
 <h1 id="2-JavaScript-的实现"><a href="#2-JavaScript-的实现" class="headerlink" title="2. JavaScript 的实现"></a>2. JavaScript 的实现</h1><p>完整的 JavaScript 由三个部分组成：核心（ECMAScript），文档对象模型（DOM），浏览器对象模型（BOM）。</p>
 <a id="more"></a>
@@ -325,7 +325,7 @@
     
     <entry>
       <title><![CDATA[Express 学习记录：开始一个简单的开始项目]]></title>
-      <url>http://blog.jxdjayden.cn/2016/07/31/Express/Express%E4%B8%8A%E6%89%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE/</url>
+      <url>http://yoursite.com/2016/07/31/Express/Express%E4%B8%8A%E6%89%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE/</url>
       <content type="html"><![CDATA[<p>由于公司的项目要求，最近在开始学习 node.js 以及跟着阮一峰老师写的 nodejs 教程学习 Express。于是在自己的 blog 记录一下学习过程。Express 是目前最流行的基于 Node.js 开发框架，可以快速地搭建一个网站。</p>
 <h1 id="1-新建目录"><a href="#1-新建目录" class="headerlink" title="1. 新建目录"></a>1. 新建目录</h1><p>新建一个项目目录 <code>$ mkdir myapp</code> 在该目录下新建一个 package.json 文件，该文件定义了项目的名字，描述，版本，同时指定需要的 Express 版本。</p>
 <pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>: <span class="string">"myapp"</span>,</div><div class="line">    <span class="string">"description"</span>: <span class="string">"Express test app"</span>,</div><div class="line">    <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">    <span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"express"</span>: <span class="string">"4.x"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -346,7 +346,7 @@
     
     <entry>
       <title><![CDATA[git 学习：标签管理及自定义]]></title>
-      <url>http://blog.jxdjayden.cn/2016/07/31/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89/</url>
+      <url>http://yoursite.com/2016/07/31/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89/</url>
       <content type="html"><![CDATA[<h1 id="1-标签管理"><a href="#1-标签管理" class="headerlink" title="1. 标签管理"></a>1. 标签管理</h1><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
 <h2 id="1-创建标签"><a href="#1-创建标签" class="headerlink" title="1. 创建标签"></a>1. 创建标签</h2><ul>
 <li><p>切换到需要打标签的分支上，然后输入命令 <code>git tag &lt;name&gt;</code> 可以打一个新标签。</p>
@@ -391,7 +391,7 @@
     
     <entry>
       <title><![CDATA[git 学习：远程仓库使用]]></title>
-      <url>http://blog.jxdjayden.cn/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BD%BF%E7%94%A8/</url>
+      <url>http://yoursite.com/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="1-远程仓库建立（以-github-为例）"><a href="#1-远程仓库建立（以-github-为例）" class="headerlink" title="1. 远程仓库建立（以 github 为例）"></a>1. 远程仓库建立（以 github 为例）</h1><ol>
 <li>创建 SSH Key</li>
 </ol>
@@ -520,7 +520,7 @@
     
     <entry>
       <title><![CDATA[git 学习：git 基本使用]]></title>
-      <url>http://blog.jxdjayden.cn/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8Bgit%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+      <url>http://yoursite.com/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8Bgit%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<p>前段时间根据廖雪峰的 git 教程自学了一遍 git 的使用，同时写了三篇文章记录自己的学习心得，最近新开了 blog，于是把这三篇文章转到这里。</p>
 <h1 id="1-windows-下-git-的安装"><a href="#1-windows-下-git-的安装" class="headerlink" title="1. windows 下 git 的安装"></a>1. windows 下 git 的安装</h1><ul>
 <li>可以通过 <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a>安装 git，然后打开 Git Bash 即可进行 git 操作。</li>
