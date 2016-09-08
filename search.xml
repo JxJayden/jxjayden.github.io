@@ -4,6 +4,20 @@
   
     
     <entry>
+      <title><![CDATA[mac 的神兵利器]]></title>
+      <url>http://blog.jxdjayden.cn/2016/09/08/software/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A01_JavaScript%E7%AE%80%E4%BB%8B/</url>
+      <content type="html"><![CDATA[<p>这个帖子用来记录自己的 mac 安装的各种软件。(待更)</p>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ol>
+<li>sublime text 3<br> 插件：</li>
+</ol>
+<h2 id="终端工具："><a href="#终端工具：" class="headerlink" title="终端工具："></a>终端工具：</h2><ol>
+<li>iTerm2</li>
+<li>fish</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ES6 的 generator 函数]]></title>
       <url>http://blog.jxdjayden.cn/2016/08/30/ES6/ES6%E7%9A%84generator%E5%87%BD%E6%95%B0/</url>
       <content type="html"><![CDATA[<p>最近公司让我整理一些文档， 其中有些代码涉及到 ES6 的 generator（生成器）函数，还有 co 函数库，thunkify 函数库等，当时查了一些资料来理解。现在把这些东西整理一下。</p>
