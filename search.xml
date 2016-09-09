@@ -5,14 +5,47 @@
     
     <entry>
       <title><![CDATA[mac 的神兵利器]]></title>
-      <url>http://blog.jxdjayden.cn/2016/09/08/software/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A01_JavaScript%E7%AE%80%E4%BB%8B/</url>
-      <content type="html"><![CDATA[<p>这个帖子用来记录自己的 mac 安装的各种软件。(待更)</p>
-<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ol>
-<li>sublime text 3<br> 插件：</li>
+      <url>http://blog.jxdjayden.cn/2016/09/08/software/mac%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>这个帖子用来记录自己的 mac 安装的各种软件。(持续更新)</p>
+<h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><ol>
+<li><a href="http://iterm2.com/" target="_blank" rel="external">iTerm2</a>：替代原生终端的强大工具。</li>
+<li><a href="https://fishshell.com/" target="_blank" rel="external">fish</a>：a command line shell for the 90s。</li>
+<li><a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">homebrew</a>：OS X 不可或缺的套件管理器，可以方便地让你用命令行安装很多东西。</li>
 </ol>
-<h2 id="终端工具："><a href="#终端工具：" class="headerlink" title="终端工具："></a>终端工具：</h2><ol>
-<li>iTerm2</li>
-<li>fish</li>
+<h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ol>
+<li><a href="https://www.sublimetext.com/" target="_blank" rel="external">sublime text 3</a>：很好用的编辑器，从 windows 开始就一直用这个。<br>插件：待更新</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li><a href="https://github.com/ZzzM/HostToolforMac" target="_blank" rel="external">HostsTool</a>：获取 hosts 更新的工具，你懂的～</li>
+<li><a href="https://github.com/oldj/SwitchHosts" target="_blank" rel="external">SwitchHosts!</a>：方便的快速的 hosts 管理工具。</li>
+<li>Go2Shell：让你方便地在 finder 中打开 shell。</li>
+<li><a href="https://kapeli.com/dash" target="_blank" rel="external">Dash</a>：强大的 api 离线文档查看软件，你不给它捐钱都不好意思。</li>
+<li><a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a>：很强大的接口测试工具。</li>
+<li><a href="https://www.sourcetreeapp.com" target="_blank" rel="external">SourceTree</a>：git 图形工具，可以用来做简单的 git 管理。</li>
+<li>Sketch</li>
+<li>WeFlow</li>
+<li>Cornerstone</li>
+</ol>
+<h2 id="效率、笔记及脑图工具"><a href="#效率、笔记及脑图工具" class="headerlink" title="效率、笔记及脑图工具"></a>效率、笔记及脑图工具</h2><ol>
+<li>Alfred3</li>
+<li>Typora</li>
+<li>Leanote</li>
+<li>CheatSheet</li>
+<li>Shiftlt</li>
+<li>Mindnode</li>
+<li>XMind</li>
+</ol>
+<h2 id="阅读工具及邮箱"><a href="#阅读工具及邮箱" class="headerlink" title="阅读工具及邮箱"></a>阅读工具及邮箱</h2><ol>
+<li>kindle</li>
+<li>reeder</li>
+<li>pocket</li>
+<li>inbox web </li>
+<li>google 日历</li>
+</ol>
+<h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>LassPass</li>
+<li>XtraFinder</li>
+<li>iStat</li>
 </ol>
 ]]></content>
     </entry>
