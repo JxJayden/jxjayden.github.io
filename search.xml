@@ -15,6 +15,7 @@
 <h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ol>
 <li><a href="https://www.sublimetext.com/" target="_blank" rel="external">sublime text 3</a>：很好用的编辑器，从 windows 开始就一直用这个。<br>插件：待更新</li>
 </ol>
+<a id="more"></a>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
 <li><a href="https://github.com/ZzzM/HostToolforMac" target="_blank" rel="external">HostsTool</a>：获取 hosts 更新的工具，你懂的～</li>
 <li><a href="https://github.com/oldj/SwitchHosts" target="_blank" rel="external">SwitchHosts!</a>：方便的快速的 hosts 管理工具。</li>
