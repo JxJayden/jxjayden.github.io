@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/09/08/software/mac%E7%9A%84%E7%A5%9E%E5%85%B5%E5%88%A9%E5%99%A8/</loc>
+    <lastmod>2016-09-10T12:32:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>mac 的神兵利器</title>
+        <pubTime>2016-09-08T15:31:00.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>软件</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="http://blog.jxdjayden.cn/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/30/ES6/ES6%E7%9A%84generator%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2016-08-30T15:59:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>ES6 的 generator 函数</title>
+        <pubTime>2016-08-30T15:12:57.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="ES6" url="http://blog.jxdjayden.cn/categories/ES6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/21/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A05_%E8%AF%AD%E5%8F%A5/</loc>
+    <lastmod>2016-08-21T04:35:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS 高程学习 5 ：语句</title>
+        <pubTime>2016-08-20T17:21:34.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JS高程学习" url="http://blog.jxdjayden.cn/categories/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/13/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A04_%E6%93%8D%E4%BD%9C%E7%AC%A6/</loc>
+    <lastmod>2016-08-14T14:58:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS 高程学习 4：操作符</title>
+        <pubTime>2016-08-12T23:58:30.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JS高程学习" url="http://blog.jxdjayden.cn/categories/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/07/31/Express/Express%E4%B8%8A%E6%89%8B%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%80%E5%A7%8B%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2016-08-10T17:05:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Express 学习记录：开始一个简单的开始项目</title>
+        <pubTime>2016-07-31T09:10:02.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+        <tag>Express</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Express" url="http://blog.jxdjayden.cn/categories/Express/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/01/Express/Express%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2016-08-10T17:05:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>Express 学习记录：运行原理</title>
+        <pubTime>2016-08-01T09:10:02.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+        <tag>Express</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Express" url="http://blog.jxdjayden.cn/categories/Express/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/04/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A02_%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2016-08-10T17:05:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS 高程学习 2：基本概念</title>
+        <pubTime>2016-08-03T16:46:20.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JS高程学习" url="http://blog.jxdjayden.cn/categories/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/05/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A03_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2016-08-10T17:05:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS 高程学习 3：数据类型</title>
+        <pubTime>2016-08-04T16:29:30.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JS高程学习" url="http://blog.jxdjayden.cn/categories/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/07/31/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89/</loc>
+    <lastmod>2016-08-03T16:09:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 学习：标签管理及自定义</title>
+        <pubTime>2016-07-31T07:31:31.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://blog.jxdjayden.cn/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-08-03T16:09:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 学习：远程仓库使用</title>
+        <pubTime>2016-07-29T14:59:33.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://blog.jxdjayden.cn/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/07/29/git/git%E5%AD%A6%E4%B9%A0%E4%B9%8Bgit%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-08-03T16:09:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>git 学习：git 基本使用</title>
+        <pubTime>2016-07-29T06:22:46.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://blog.jxdjayden.cn/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/08/03/Express/Express%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2016-08-03T16:08:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Express 学习记录：Express 的方法</title>
+        <pubTime>2016-08-03T09:08:02.000Z</pubTime>
+        
+        <tag>node</tag>
+         
+        <tag>Express</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Express" url="http://blog.jxdjayden.cn/categories/Express/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.jxdjayden.cn/2016/07/31/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A01_JavaScript%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2016-08-03T15:49:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS 高程学习 1：JavaScript 简介</title>
+        <pubTime>2016-07-31T13:44:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JS高程学习" url="http://blog.jxdjayden.cn/categories/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
