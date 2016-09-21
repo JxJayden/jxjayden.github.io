@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://blog.jxdjayden.cn/2016/09/21/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A06_%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2016-09-21T15:51:13.000Z</lastmod>
+    <lastmod>2016-09-21T15:55:27.000Z</lastmod>
     <data>
         <display>
         <title>JS高程学习6：函数</title>
@@ -56,9 +56,9 @@
         <title>ES6 的 generator 函数</title>
         <pubTime>2016-08-30T15:12:57.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>ES6</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -118,11 +118,11 @@
         <title>Express 学习记录：开始一个简单的开始项目</title>
         <pubTime>2016-07-31T09:10:02.000Z</pubTime>
         
+        <tag>JavaScript</tag>
+         
         <tag>node</tag>
          
         <tag>Express</tag>
-         
-        <tag>JavaScript</tag>
          
          
            
@@ -142,11 +142,11 @@
         <title>Express 学习记录：运行原理</title>
         <pubTime>2016-08-01T09:10:02.000Z</pubTime>
         
+        <tag>JavaScript</tag>
+         
         <tag>node</tag>
          
         <tag>Express</tag>
-         
-        <tag>JavaScript</tag>
          
          
            
@@ -266,11 +266,11 @@
         <title>Express 学习记录：Express 的方法</title>
         <pubTime>2016-08-03T09:08:02.000Z</pubTime>
         
+        <tag>JavaScript</tag>
+         
         <tag>node</tag>
          
         <tag>Express</tag>
-         
-        <tag>JavaScript</tag>
          
          
            
