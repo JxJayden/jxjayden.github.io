@@ -272,6 +272,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/23/browser/浏览器对后退行为的处理/" itemprop="url">
+                  浏览器对后退行为的处理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T11:33:06+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/browser/" itemprop="url" rel="index">
+                    <span itemprop="name">browser</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/23/browser/浏览器对后退行为的处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/browser/浏览器对后退行为的处理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>今天在公司的项目中遇到 Firefox 一个很有趣的特性：在页面上点击了本页打开的链接，如果马上点一下 Firefox 的后退按钮，就会退回到之前的页面，并且原来页面的状态会被还原，包括 JavaScript 改变的 DOM 结构也会保持。举个栗子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://blog.jxdjayden.cn"</span>&gt;</span>Click Me!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></div><div class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"the back button on Firefox"</span>);</div><div class="line">    <span class="keyword">var</span> i = <span class="number">1</span>;</div><div class="line">    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>).innerHTML = i++;</div><div class="line">    &#125;,<span class="number">1000</span>);</div><div class="line">  &#125;;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/23/browser/浏览器对后退行为的处理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/21/JS高程学习/JS高程学习6_函数/" itemprop="url">
                   JS高程学习6：函数
                 </a>
@@ -1381,129 +1504,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/31/JS高程学习/JS高程学习1_JavaScript简介/" itemprop="url">
-                  JS 高程学习 1：JavaScript 简介
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T21:44:00+08:00" content="2016-07-31">
-              2016-07-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JS高程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">JS高程学习</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/31/JS高程学习/JS高程学习1_JavaScript简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/JS高程学习/JS高程学习1_JavaScript简介/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="1-JavaScript-简史"><a href="#1-JavaScript-简史" class="headerlink" title="1. JavaScript 简史"></a>1. JavaScript 简史</h1><p>JavaScript 诞生于 1995 年，当时它的主要目的是处理以前由服务器端语言（如 Perl）负责的一些输入验证操作。1997 年，以 JavaScript1.1 为蓝本的建议被提交给了 ECMA，经过数月的努力，完成了 ECMA-262 的新脚本语言的标准。自此以后，浏览器开发商就开始致力于将 ECMAScript 作为各自 JavaScript 实现的基础。<br>如今，JavaScript 已经成为一门功能全面的编程语言，能够处理复杂的计算和交互，拥有了闭包，匿名函数等特性。</p>
-<h1 id="2-JavaScript-的实现"><a href="#2-JavaScript-的实现" class="headerlink" title="2. JavaScript 的实现"></a>2. JavaScript 的实现</h1><p>完整的 JavaScript 由三个部分组成：核心（ECMAScript），文档对象模型（DOM），浏览器对象模型（BOM）。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/31/JS高程学习/JS高程学习1_JavaScript简介/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1549,7 +1549,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1557,7 +1557,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1566,7 +1566,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
