@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[I am quiet inside]]></title>
+      <url>http://blog.jxdjayden.cn/2016/09/27/lifestyle/quietinside/</url>
+      <content type="html"><![CDATA[<p>分享一个自己很喜欢的独立品牌 <a href="https://shop73238177.taobao.com/" target="_blank" rel="external">TACITURNLI</a> 2016 秋冬型录。嗯，纯粹是作为一个粉丝的自我分享，相信你也不会觉得一个服装品牌会找流量几近零的 blog（而且还是码农）来打广告。TACITURNLI 最让我喜欢的是每一件衣物都会经过熏香，那个味道让我醉心不已。少说废话，来看图片。</p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/31.jpg" alt="0"></p>
+<a id="more"></a>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/9.jpg" alt="1"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/18.jpg" alt="2"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/13.jpg" alt="3"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/6.jpg" alt="4"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/24.jpg" alt="6"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/20.jpg" alt="7"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/27.jpg" alt="8"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/32.jpg" alt="9"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/28.jpg" alt="10"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/33.jpg" alt="11"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/41.jpg" alt="12"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/44.jpg" alt="12"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/40.jpg" alt="13"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/6.jpg" alt="14"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/8.jpg" alt="14"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/9.jpg" alt="15"></p>
+<p><img src="http://odgdn5u95.bkt.clouddn.com/29.jpg" alt="16"></p>
+<p>也许你会很奇怪为什么我要在自己的 blog 里面放一篇跟代码毫无关系的文章，但就如我的 blog 名一样：代码与胡说。并且我认为程序员也是人，亦有自己的喜好，以及代码之外的乐趣。这就是我的喜好乐趣，也希望你可以享受代码之外的乐趣，有一句很老套的话：生活从来不缺少美，只是缺少发现美的眼睛。</p>
+<p>文中所用图均来源于太格有物的<a href="http://www.thetigerhood.com/taciturnli-2/" target="_blank" rel="external">逃离是为了更好的生活 TACITURNLI 2016秋冬型录</a>一文。文中有句话我很喜欢：</p>
+<blockquote>
+<p>日常里的每一件事情都复杂得超出了我们的预期。它们要求你快速得做决定，积极的跟别人交流，要求你在完成一项工作之后立刻去着手下一个。事情越来越多，自己变成一种只会拼命做事的熟练工种，用繁忙去交换每一次完成的快感，以及生活上整体流动的状态。让你觉得日子在走，也不管是不是在原地打转。</p>
+</blockquote>
+<p>I used to be so hard to find<br>Rage and tears filled my eyes<br>But now I believe I see much clearer<br>My clarity did not come easily<br>My cell was knocked into me<br>But now at least I know who′s in the mirror<br>I am quiet inside </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[浏览器对后退行为的处理]]></title>
       <url>http://blog.jxdjayden.cn/2016/09/23/browser/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E5%90%8E%E9%80%80%E8%A1%8C%E4%B8%BA%E7%9A%84%E5%A4%84%E7%90%86/</url>
       <content type="html"><![CDATA[<p>今天在公司的项目中遇到 Firefox 一个很有趣的特性：在页面上点击了本页打开的链接，如果马上点一下 Firefox 的后退按钮，就会退回到之前的页面，并且原来页面的状态会被还原，包括 JavaScript 改变的 DOM 结构也会保持。举个栗子：</p>
