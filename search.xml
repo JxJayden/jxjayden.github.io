@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[基础知识真的很重要！！！记三个月的实习]]></title>
+      <url>http://blog.jxdjayden.cn/2016/09/30/%E6%80%BB%E7%BB%93/20160930%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>今天是三个月实习的最后一天，这三个月总得来说学习到很多东西，虽然到后期因为每天给隔壁公司的渣前端填坑（每天填坑时间占工作时间 50%），所以知识增长速度极度下降，但是同时对我的耐心以及我的基础知识都磨砺了一遍。不过实在是课太多，只能离职回来学校好好学习了。国庆并没有打算去哪里旅游，其实是不想去人挤人，于是打算宿舍、咖啡店、健身房来回。今晚趁着新鲜且尚未忘怀的记忆做一些实习总结吧。</p>
+<a id="more"></a>
+<h2 id="关于前端的基础知识以及规范"><a href="#关于前端的基础知识以及规范" class="headerlink" title="关于前端的基础知识以及规范"></a>关于前端的基础知识以及规范</h2><p>其实自己之前除了有些代码洁癖之外，对于前端的规范是知之甚少，毕竟一个人在写代码总是懒得去遵循一个规范。然而在工作中，特别是团队合作，这样的行为往往是致命的，我自己就因为其他前端不遵循公司的代码规范乱写 JavaScript ，导致我去查 bug 的时候极其痛苦，最后实在受不了直接全部重新撸了一遍。<br>我实习的公司是一家不知名的小公司，但是因为老板也是技术出身，对团队技术要求较高，同时公司内有一个技术大神，所以我们对于代码的规范也有一些要求，这个算是我实习中学到的最重要的也是最基础的一个规则。良好的代码规范对于团队合作，甚至是个人工作都是必要的。是的，你不会想到当你想去重构一个月前自己写下的代码时，剪不清理还乱的痛。<br>推荐三个代码规范：</p>
+<ol>
+<li><a href="https://github.com/fex-team/styleguide" target="_blank" rel="external">百度 FEX 的文档与代码规范</a>；</li>
+<li><a href="https://github.com/google/styleguide" target="_blank" rel="external">Google Style Guides</a>；</li>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="external">Airbnb JavaScript Style Guide</a>。</li>
+</ol>
+<p>插播一句：</p>
+<blockquote>
+<p>在我写着实习总结的时候，正好一个前端交流微信群里，有人分享了为什么 <code>typeof null == &#39;object&#39;</code> 的原因，趁新鲜记录一下，之后再做详细介绍：<strong>不同的对象在底层都表示为二进制，在 JavaScript 中二进制前三位都为 0 的话会被判断为 object 类型，null 的二进制表示是全 0，自然前三位也是 0，所以执行 typeof  时会返回“object”。</strong><br>关于 typeof 的简单归纳可以查看我之前的 blog：<a href="http://blog.jxdjayden.cn/2016/08/05/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0/JS%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A03_%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">JavaScript 高程学习 3：数据类型</a>。之后有空会再写篇文章说一下。（挖个坑）<br>好了，接着总结。除了代码规范之外，审查别人的代码也让我把 HTML 和 CSS 的基础知识全都过了一遍，是的，隔壁公司的渣前端还会在一个 div 中定义两个 class 。🙄️🙄️🙄️ （为什么隔壁公司的事情我会管呢， 因为我们公司占有他们公司的股份）之前自己老是觉得 HTML 和 CSS 太简单，不想去深入学习，感觉 JavaScript 才是光明大道，但是现在我发现，一屋不扫何以扫天下，CSS 都学不好怎样做一个好前端？接下来会多写一些博文来记录一些 HTML 和 CSS 的基础知识，帮助自己记忆以及梳理。</p>
+</blockquote>
+<h2 id="关于-JavaScript-的学习"><a href="#关于-JavaScript-的学习" class="headerlink" title="关于 JavaScript 的学习"></a>关于 JavaScript 的学习</h2><h3 id="基础知识很重要！！！"><a href="#基础知识很重要！！！" class="headerlink" title="基础知识很重要！！！"></a>基础知识很重要！！！</h3><p>这个基础知识，不仅仅是指 JavaScript 的基础知识，同样代表着算法和数据结构的基础知识。今天在知乎看到一篇翻译的文章：<a href="https://zhuanlan.zhihu.com/p/22714957" target="_blank" rel="external">软件开发技艺精进之路</a>。其中作者讲了自己对于软件开发者精进之路的思考，他把这个过程分为三个阶段：</p>
+<blockquote>
+<p>为了易于表达，我们把编程能力划分为简化的场景：</p>
+<ul>
+<li>基础：所有相关于算法、数据结构、计算机科学问题、应用设计原则（SOLID, KISS, DRY, SoC）、扩展性。</li>
+<li>语言：所有相关于编程语言（Javascript, Swift, Java），语法、操作符、变量、编译器。</li>
+<li>框架：所有相关于框架（AngularJS, ReactJS, Cocoa Touch）与平台（Browser, NodeJS）。 </li>
+</ul>
+<ol>
+<li>初学者：倒三角形<br><img src="http://odgdn5u95.bkt.clouddn.com/20160930%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%931.png" alt="" title="初学者"></li>
+<li>熟练工：矩形<br><img src="http://odgdn5u95.bkt.clouddn.com/20160930%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%932.png" alt="" title="熟练工"></li>
+<li>专家：正三角形<br><img src="http://odgdn5u95.bkt.clouddn.com/20160930%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%933.png" alt="" title="专家"><br>作者建议：<br>流行框架甚至编程语言迟早会过时。他们将会被更好的工具所替代：这是进化的必然结果。你能够做的事情就是把重点放在基础上。<br>当然基础学习起来有些难。有些算法难于理解与记忆。我的建议是「玩得开心」：你可以多次去阅读一个算法。想着其好处可能导致一个特殊的数据结构（译者备注这里可能翻译的不对）。挑战自己，变得越来越牛。<br>不管基础是难的这个事实，有个愉快的奖励：它不会经常改变。从 80 年代甚至 70 年代创建至现在，算法与数据结构没有什么重大的改变。一次性学习透了，然后不断重复，你就在正确在道路上了。</li>
+</ol>
+</blockquote>
+<p>可以点击查看原文：<a href="https://rainsoft.io/the-path-of-software-development-craftsmanship/" target="_blank" rel="external">The path of software development craftsmanship</a>。<br>作为一个非计算机专业出身的前端开发者，在经过这段实习时间后，表示非常赞同这种看法，同时立个 flag 我要去补一补算法和数据结构！！</p>
+<h3 id="框架其实不是最重要的"><a href="#框架其实不是最重要的" class="headerlink" title="框架其实不是最重要的"></a>框架其实不是最重要的</h3><p>这个问题是很多人在刚入门的时候会形成的错误，因为前端的框架有部分实在是太好用了，比如 jQuery 这种曾经风靡一代甚至现在都还非常流行（虽然很多人在说去 jQuery ，但是依旧有一大堆项目依赖着 jQuery 正常运行），但是千万不要错以为你会某个目前很流行的前端框架并且用的很溜，你就学会 JavaScript 了。最最重要的是你要去学会 JavaScript 的基础，研究透它，这个才是你可以赖以生存的真正技能（而不是 JS 框架）。<br>那么 JavaScript 要怎样学习呢？推荐阅读：<a href="http://www.w3cfuns.com/notes/17398/d3f6dd40e2d3ff15b209810dfa98be0b.html" target="_blank" rel="external">统一回复《怎么学JavaScript？》</a>。</p>
+<h3 id="关于-node-js"><a href="#关于-node-js" class="headerlink" title="关于 node.js"></a>关于 node.js</h3><p>node.js 让前端开发者可以无痛地使用 JavaScript 进行后台开发，但是有个建议，不要花太多精力在 node.js 的框架上，先把 node.js 的基础学好，node 的 api 这些需要掌握的很好。舍本逐末，追求快速是一个很错误的选择。当然了， koa 很棒！</p>
+<h2 id="关于其他杂七杂八的东西"><a href="#关于其他杂七杂八的东西" class="headerlink" title="关于其他杂七杂八的东西"></a>关于其他杂七杂八的东西</h2><h3 id="选择一家合适的实习公司"><a href="#选择一家合适的实习公司" class="headerlink" title="选择一家合适的实习公司"></a>选择一家合适的实习公司</h3><p>一家合适的实习公司对你个人的成长是非常有帮助的，而不合适的公司可以让你两三个月的时间白白荒废。所以，请不要觉得实习无所谓就随便选，认真对待，是对你自己负责也是对公司负责。选一家合适的公司需要考虑什么：</p>
+<ol>
+<li>你想在这家公司学到什么？团队合作经验？JavaScript 进阶？职场初体验？</li>
+<li>这家公司给你的收获和你付出的成本会不会差太多？时间成本，精力成本？</li>
+<li>这家公司的方向与你个人的兴趣之间会不会差异太大？当然了，如果你能够忍受做不感兴趣的工作可以忽略。</li>
+<li>基本待遇怎样？虽然出来实习确实不应该太过于考虑工资这些，但是一家好的公司不会忽略人才。（电视台报社实习什么的不在参考范围）</li>
+</ol>
+<h3 id="如何学到东西"><a href="#如何学到东西" class="headerlink" title="如何学到东西"></a>如何学到东西</h3><ol>
+<li>遇到问题虚心请教。基本路径：遇到问题➡️(百度或 Google）? 解决：问同事或导师。切勿遇到问题不经思考就直接提问。</li>
+<li>阅读代码，好的代码就是好的老师，通过阅读牛逼同事的代码可以让你的能力以及编程思想快速提升。同样适用于各种优秀框架的源码。我在实习期间被逼着写一个比较重要的模块的前端代码文档，然后从头到尾详细阅读并思考技术大神同事写的代码，受益良多。</li>
+<li>多做笔记，建议每天或者每周末对自己的一周工作做个总结，反省。当然了，上班的时候，就别写文了……</li>
+<li>主动请教。在下班期间（午餐时间是一个非常棒的请教时间），主动地去问一些同事的学习经历以及获取他们的建议。往往你请同事吃个饭什么的，对方就会很乐意地跟你分享了。</li>
+</ol>
+<p>这篇总结并没详细地列出我在工作上获取的知识，因为我觉得阶段性总结最重要的是让我自己记住同时分享如何获取知识的方法以及让知识体系应该侧重的地方。而不是列个清单把自己掌握到的知识点一一写下来，这些在网上不计其数。如果这篇总结可以给你带来一些帮助，满足已。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[I am quiet inside]]></title>
       <url>http://blog.jxdjayden.cn/2016/09/27/lifestyle/quietinside/</url>
       <content type="html"><![CDATA[<p>分享一个自己很喜欢的独立品牌 <a href="https://shop73238177.taobao.com/" target="_blank" rel="external">TACITURNLI</a> 2016 秋冬型录。嗯，纯粹是作为一个粉丝的自我分享，相信你也不会觉得一个服装品牌会找流量几近零的 blog（而且还是码农）来打广告。TACITURNLI 最让我喜欢的是每一件衣物都会经过熏香，那个味道让我醉心不已。少说废话，来看图片。</p>
