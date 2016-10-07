@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,node,Express," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="由于公司的项目要求，最近在开始学习 node.js 以及跟着阮一峰老师写的 nodejs 教程学习 Express。于是在自己的 blog 记录一下学习过程。Express 是目前最流行的基于 Node.js 开发框架，可以快速地搭建一个网站。
-1. 新建目录新建一个项目目录 $ mkdir myapp 在该目录下新建一个 package.json 文件，该文件定义了项目的名字，描述，版本，同时指">
+<meta name="description" content="基本类型和引用类型的值ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。注意引用类型的值是保存在内存中的对象。而JavaScript 是不允许直接访问内存中的位置，因此在操作对象的时候，实际上是操作对象的引用而不是实际的对象。但是在为对象添加属性的时候，操作的是实际的对象。
+动态的属性
+对于引用类型的值，我们可以为其添加属性和方法，也可以改变或删除。
+但是不能给基本类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Express 学习记录：开始一个简单的开始项目">
-<meta property="og:url" content="http://blog.jxdjayden.cn/2016/07/31/Express/Express上手一个简单的开始项目/index.html">
+<meta property="og:title" content="JS 高程学习 7：关于基本类型和引用类型">
+<meta property="og:url" content="http://blog.jxdjayden.cn/2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/index.html">
 <meta property="og:site_name" content="代码与胡说">
-<meta property="og:description" content="由于公司的项目要求，最近在开始学习 node.js 以及跟着阮一峰老师写的 nodejs 教程学习 Express。于是在自己的 blog 记录一下学习过程。Express 是目前最流行的基于 Node.js 开发框架，可以快速地搭建一个网站。
-1. 新建目录新建一个项目目录 $ mkdir myapp 在该目录下新建一个 package.json 文件，该文件定义了项目的名字，描述，版本，同时指">
-<meta property="og:updated_time" content="2016-08-10T17:05:49.000Z">
+<meta property="og:description" content="基本类型和引用类型的值ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。注意引用类型的值是保存在内存中的对象。而JavaScript 是不允许直接访问内存中的位置，因此在操作对象的时候，实际上是操作对象的引用而不是实际的对象。但是在为对象添加属性的时候，操作的是实际的对象。
+动态的属性
+对于引用类型的值，我们可以为其添加属性和方法，也可以改变或删除。
+但是不能给基本类">
+<meta property="og:updated_time" content="2016-10-07T05:45:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Express 学习记录：开始一个简单的开始项目">
-<meta name="twitter:description" content="由于公司的项目要求，最近在开始学习 node.js 以及跟着阮一峰老师写的 nodejs 教程学习 Express。于是在自己的 blog 记录一下学习过程。Express 是目前最流行的基于 Node.js 开发框架，可以快速地搭建一个网站。
-1. 新建目录新建一个项目目录 $ mkdir myapp 在该目录下新建一个 package.json 文件，该文件定义了项目的名字，描述，版本，同时指">
+<meta name="twitter:title" content="JS 高程学习 7：关于基本类型和引用类型">
+<meta name="twitter:description" content="基本类型和引用类型的值ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。注意引用类型的值是保存在内存中的对象。而JavaScript 是不允许直接访问内存中的位置，因此在操作对象的时候，实际上是操作对象的引用而不是实际的对象。但是在为对象添加属性的时候，操作的是实际的对象。
+动态的属性
+对于引用类型的值，我们可以为其添加属性和方法，也可以改变或删除。
+但是不能给基本类">
 
 
 
@@ -119,9 +125,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.jxdjayden.cn/2016/07/31/Express/Express上手一个简单的开始项目/"/>
+  <link rel="canonical" href="http://blog.jxdjayden.cn/2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/"/>
 
-  <title> Express 学习记录：开始一个简单的开始项目 | 代码与胡说 </title>
+  <title> JS 高程学习 7：关于基本类型和引用类型 | 代码与胡说 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +279,7 @@
             
             
               
-                Express 学习记录：开始一个简单的开始项目
+                JS 高程学习 7：关于基本类型和引用类型
               
             
           </h1>
@@ -285,8 +291,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T17:10:02+08:00" content="2016-07-31">
-              2016-07-31
+            <time itemprop="dateCreated" datetime="2016-10-07T11:03:55+08:00" content="2016-10-07">
+              2016-10-07
             </time>
           </span>
 
@@ -299,8 +305,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Express/" itemprop="url" rel="index">
-                    <span itemprop="name">Express</span>
+                  <a href="/categories/JS高程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">JS高程学习</span>
                   </a>
                 </span>
 
@@ -315,8 +321,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/31/Express/Express上手一个简单的开始项目/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/Express/Express上手一个简单的开始项目/" itemprop="commentsCount"></span>
+                <a href="/2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -339,21 +345,28 @@
       
 
       
-        <p>由于公司的项目要求，最近在开始学习 node.js 以及跟着阮一峰老师写的 nodejs 教程学习 Express。于是在自己的 blog 记录一下学习过程。Express 是目前最流行的基于 Node.js 开发框架，可以快速地搭建一个网站。</p>
-<h1 id="1-新建目录"><a href="#1-新建目录" class="headerlink" title="1. 新建目录"></a>1. 新建目录</h1><p>新建一个项目目录 <code>$ mkdir myapp</code> 在该目录下新建一个 package.json 文件，该文件定义了项目的名字，描述，版本，同时指定需要的 Express 版本。</p>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>: <span class="string">"myapp"</span>,</div><div class="line">    <span class="string">"description"</span>: <span class="string">"Express test app"</span>,</div><div class="line">    <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">    <span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"express"</span>: <span class="string">"4.x"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><a id="more"></a>
-<h1 id="2-安装-Express"><a href="#2-安装-Express" class="headerlink" title="2. 安装 Express"></a>2. 安装 Express</h1><p>然后使用命令 <code>npm install</code> 进行安装。安装成功会显示：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">├── range-parser@1.2.0</div><div class="line">├── content-type@1.0.2</div><div class="line">├── cookie@0.3.1</div><div class="line">├── encodeurl@1.0.1</div><div class="line">├── utils-merge@1.0.0</div><div class="line">├── merge-descriptors@1.0.1</div><div class="line">├── methods@1.1.2</div><div class="line">├── serve-static@1.11.1</div><div class="line">├── fresh@0.3.0</div><div class="line">├── path-to-regexp@0.1.7</div><div class="line">├── depd@1.1.0</div><div class="line">├── qs@6.2.0</div><div class="line">├── on-finished@2.3.0 (ee-first@1.1.1)</div><div class="line">├── finalhandler@0.5.0 (unpipe@1.0.0, statuses@1.3.0)</div><div class="line">├── debug@2.2.0 (ms@0.7.1)</div><div class="line">├── proxy-addr@1.1.2 (forwarded@0.1.0, ipaddr.js@1.1.1)</div><div class="line">├── accepts@1.3.3 (negotiator@0.6.1, mime-types@2.1.11)</div><div class="line">├── type-is@1.6.13 (media-typer@0.3.0, mime-types@2.1.11)</div><div class="line">└── send@0.14.1 (destroy@1.0.4, statuses@1.3.0, ms@0.7.1, mime@1.3.4, http-errors@1.5.0)</div></pre></td></tr></table></figure>
-</code></pre><h1 id="3-初步尝试"><a href="#3-初步尝试" class="headerlink" title="3. 初步尝试"></a>3. 初步尝试</h1><p>安装成功后，在项目根目录下新建一个启动文件，可命名为 index.js，并输入：</p>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express=<span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app=express();</div><div class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">"Hello,world!"</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Sever has started'</span>);</div><div class="line">&#125;);</div><div class="line">app.listen(<span class="number">8000</span>);</div></pre></td></tr></table></figure>
-</code></pre><p>然后在命令行使用命令 <code>node index.js</code> 运行脚本，就可以通过 <a href="http://localhost:8000" target="_blank" rel="external">http://localhost:8000</a>来访问网站。上面代码会在本机的 8000 端口启动一个网站，网页显示 Hello World。<br><strong>req (请求) 和 res (响应) 与 Node 提供的对象完全一致，因此，你可以调用 req.pipe()、req.on(‘data’, callback) 以及任何 Node 提供的方法。</strong><br><strong>app.get</strong> 方法用于指定不同的访问路径所对应的回调函数，这叫做“路由”（routing）。路由是指如何定义应用的端点（URIs）以及如何响应客户端的请求。</p>
-<h1 id="4-合并-routes"><a href="#4-合并-routes" class="headerlink" title="4. 合并 routes"></a>4. 合并 routes</h1><p>如果有多个路由，那么可以新建一个 router.js 文件，把所有 routes 都放到一起。</p>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">    \\router.js</div><div class="line">    <span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>) </span>&#123;</div><div class="line">        app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">            res.send(<span class="string">'Hello world'</span>);</div><div class="line">        &#125;);</div><div class="line">        app.get(<span class="string">'/start'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">            res.send(<span class="string">'start'</span>);</div><div class="line">        &#125;);</div><div class="line">        app.get(<span class="string">'/upload'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">            res.send(<span class="string">'upload'</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    <span class="string">``</span><span class="string">`    </span></div><div class="line">同时修改 index.js </div><div class="line"></div><div class="line">    `<span class="string">``</span>JavaScript</div><div class="line">    \\index.js</div><div class="line">    <span class="keyword">var</span> express=<span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line">    <span class="keyword">var</span> app=express();</div><div class="line">    <span class="keyword">var</span> routes=<span class="built_in">require</span>(<span class="string">'./router.js'</span>)(app);</div><div class="line">    app.listen(<span class="number">8000</span>);</div></pre></td></tr></table></figure>
-</code></pre><p>这时，如果在浏览器访问 <a href="http://localhost:8000/start" target="_blank" rel="external">http://localhost:8000/start</a> ，网页会显示 start。访问 <a href="http://localhost:8000/start" target="_blank" rel="external">http://localhost:8000/upload</a> 会显示 upload。<br>这样我们就简单的构建了一个项目网站。并且可以在本地通过 http:/localhost:8000 来访问，同时可以对不同的 URL 进行响应，显示不同的内容。 </p>
+        <h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。注意引用类型的值是保存在内存中的对象。而JavaScript 是不允许直接访问内存中的位置，因此在操作对象的时候，实际上是操作对象的引用而不是实际的对象。但是在为对象添加属性的时候，操作的是实际的对象。</p>
+<h2 id="动态的属性"><a href="#动态的属性" class="headerlink" title="动态的属性"></a>动态的属性</h2><ol>
+<li>对于引用类型的值，我们可以为其添加属性和方法，也可以改变或删除。</li>
+<li>但是不能给基本类型的值添加属性。</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line">person.name = <span class="string">'Jayden'</span>;</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// "Jayden"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> name = <span class="string">'Jayden'</span>;</div><div class="line">name.age = <span class="string">'21'</span>; <span class="comment">// 无效，但不会引起错误</span></div><div class="line"><span class="built_in">console</span>.log(name.age); <span class="comment">// "undefined"</span></div></pre></td></tr></table></figure>
+<h2 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 基本类型的值复制会创建一个新值</span></div><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div><div class="line"></div><div class="line"><span class="comment">// num2 只是 num1 中 5 的一个副本，对这两个变量进行任何操作都不会互相影响。</span></div><div class="line">num1 = <span class="number">6</span>;</div><div class="line"><span class="built_in">console</span>.log(num1); <span class="comment">// 6</span></div><div class="line"><span class="built_in">console</span>.log(num2); <span class="comment">// 5</span></div></pre></td></tr></table></figure>
+<p>从一个变量向另一个变量复制引用类型的值的时候，同样也会将存储在变量对象中的值复制一份放到为新变量分配的空间中，不同的是，这个值的副本实际上是一个指针，这个指针指向存储在堆中的一个变量对象。复制操作结束后，两个变量实际上引用同一个对象。上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line">obj1.name = <span class="string">'Jayden'</span>;</div><div class="line"><span class="built_in">console</span>.log(obj2.name); <span class="comment">// "Jayden"</span></div><div class="line"></div><div class="line">obj2.name = <span class="string">'K'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.name); <span class="comment">// "K"</span></div></pre></td></tr></table></figure>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><p>ECMAScript 所有函数的参数都是按值传递的，即是把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量中，也就是说引用类型值的传递，跟引用类型变量的复制也是一样的。上代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">  num += <span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">// 20;</span></div><div class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 30;</span></div><div class="line"></div><div class="line"><span class="comment">// 引用类型值的传递</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.name = <span class="string">"Jayden"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line">setName(person);</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// "Jayden"</span></div><div class="line"></div><div class="line"><span class="comment">// 但是要注意参数实际上还是按值传递的，看例子：</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.name = <span class="string">'Jayden'</span>;</div><div class="line">  obj = &#123;&#125;;</div><div class="line">  obj.name = <span class="string">'K'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line">setName(person);</div><div class="line"><span class="built_in">console</span>.log(person.name); <span class="comment">// "Jayden"</span></div></pre></td></tr></table></figure>
+<p>最后一个例子说明了如果 person 是按引用传递的，那么 person 应该会被修改为指向 name 为 “K” 的新对象。但是在外部访问 person.name 的时候，其值依然为 “Jayden”。说明即使在函数内部修改了参数的值，但原始的引用仍然保持不变。实际上，当在函数内部重写 obj 时，这个变量引用的是一个局部对象了。</p>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><p>要检测一个变量是不是基本数据类型，可以使用 typeof 操作符，但是如果变量的值是一个对象或 null ，则 typeof 就有点犯傻了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> b = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">typeof</span> a; <span class="comment">// "object"</span></div><div class="line"><span class="keyword">typeof</span> b; <span class="comment">// "object"</span></div></pre></td></tr></table></figure>
+<p>说到这里，你肯定很奇怪为什么 <code>typeof null</code> 返回 object 呢？这个问题我之前也一直很疑惑，直到前段时间有个微信群里的一个朋友解释了原因：</p>
 <blockquote>
-<p>参考：<a href="http://javascript.ruanyifeng.com/nodejs/express.html#toc5" target="_blank" rel="external">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p>
+<p>不同的对象在底层都表示为二进制，在 JavaScript 中二进制前三位都为 0 的话会被判断为 object 类型，null 的二进制表示是全 0，自然前三位也是 0，所以执行 typeof 时会返回“object”。</p>
 </blockquote>
+<p>恍然大悟。果然学无止境～<br>那么在如何检测某个值是不是对象，并且它是什么类型的对象呢？呐，<code>instanceof</code>。看代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/[a-z]/i</span>;</div><div class="line"></div><div class="line">person <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true</span></div><div class="line">arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>; <span class="comment">// true</span></div><div class="line">reg <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>; <span class="comment">// true</span></div><div class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>注意：所有引用类型的值都是 Object 的实例。</p>
 
       
     </div>
@@ -378,10 +391,6 @@
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/node/" rel="tag">#node</a>
-          
-            <a href="/tags/Express/" rel="tag">#Express</a>
-          
         </div>
       
 
@@ -389,17 +398,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/31/git/git学习之标签管理及自定义/" rel="next" title="git 学习：标签管理及自定义">
-                <i class="fa fa-chevron-left"></i> git 学习：标签管理及自定义
+              <a href="/2016/09/30/总结/20160930实习总结/" rel="next" title="基础知识真的很重要！！！记三个月的实习">
+                <i class="fa fa-chevron-left"></i> 基础知识真的很重要！！！记三个月的实习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/31/JS高程学习/JS高程学习1_JavaScript简介/" rel="prev" title="JS 高程学习 1：JavaScript 简介">
-                JS 高程学习 1：JavaScript 简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -425,8 +430,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/31/Express/Express上手一个简单的开始项目/"
-           data-title="Express 学习记录：开始一个简单的开始项目" data-url="http://blog.jxdjayden.cn/2016/07/31/Express/Express上手一个简单的开始项目/">
+      <div class="ds-thread" data-thread-key="2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/"
+           data-title="JS 高程学习 7：关于基本类型和引用类型" data-url="http://blog.jxdjayden.cn/2016/10/07/JS高程学习/JS高程学习7_基本类型和引用类型/">
       </div>
     
   </div>
@@ -537,7 +542,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-新建目录"><span class="nav-number">1.</span> <span class="nav-text">1. 新建目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-安装-Express"><span class="nav-number">2.</span> <span class="nav-text">2. 安装 Express</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-初步尝试"><span class="nav-number">3.</span> <span class="nav-text">3. 初步尝试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-合并-routes"><span class="nav-number">4.</span> <span class="nav-text">4. 合并 routes</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型和引用类型的值"><span class="nav-number">1.</span> <span class="nav-text">基本类型和引用类型的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态的属性"><span class="nav-number">2.</span> <span class="nav-text">动态的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制变量值"><span class="nav-number">3.</span> <span class="nav-text">复制变量值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传递参数"><span class="nav-number">4.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测类型"><span class="nav-number">5.</span> <span class="nav-text">检测类型</span></a></li></ol></div>
             
           </div>
         </section>
