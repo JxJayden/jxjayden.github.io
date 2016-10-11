@@ -283,8 +283,8 @@ a {
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #d0104c;
+  border-bottom-color: #d0104c;
 }
 ul {
   list-style: none;
@@ -736,8 +736,8 @@ pre .javascript .function {
   padding: 0 20px;
   font-size: 14px;
   color: #fff;
-  background: #222;
-  border: 2px solid #222;
+  background: #d0104c;
+  border: 2px solid #d0104c;
   text-decoration: none;
   border-radius: 0;
   transition-property: background-color;
@@ -747,8 +747,8 @@ pre .javascript .function {
 }
 .btn:hover,
 .post-more-link .btn:hover {
-  border-color: #222;
-  color: #222;
+  border-color: #d0104c;
+  color: #d0104c;
   background: #fff;
 }
 .btn-bar {
@@ -800,7 +800,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #222;
+  border-top-color: #d0104c;
 }
 .pagination .space {
   padding: 0;
@@ -831,7 +831,7 @@ pre .javascript .function {
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #222;
+    border-bottom-color: #d0104c;
   }
 }
 .comments {
@@ -855,7 +855,7 @@ pre .javascript .function {
   background: #222;
   font-size: 12px;
   opacity: 1;
-  color: #fff;
+  color: #e83015;
   cursor: pointer;
   text-align: center;
   -webkit-transform: translateZ(0);
@@ -885,7 +885,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #cb4042;
 }
 .site-meta {
   margin: 0;
@@ -901,7 +901,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: #cb4042;
   border-bottom: none;
 }
 .brand:hover {
@@ -998,7 +998,7 @@ pre .javascript .function {
   transition-delay: 0s;
 }
 .menu .menu-item a:hover {
-  border-bottom-color: #222;
+  border-bottom-color: #cb1b45;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1187,10 +1187,10 @@ pre .javascript .function {
   transition-property: background;
 }
 .posts-collapse .post-header:hover {
-  border-bottom-color: #666;
+  border-bottom-color: #db4d6d;
 }
 .posts-collapse .post-header:hover::before {
-  background: #222;
+  background: #e83015;
 }
 .posts-collapse .post-meta {
   position: absolute;
@@ -1247,7 +1247,7 @@ pre .javascript .function {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #db4d6d;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
@@ -1319,7 +1319,7 @@ pre .javascript .function {
 .post-more-link .btn {
   color: #fff;
   font-size: 14px;
-  background: #222;
+  background: #d0104c;
   border-radius: 0;
   line-height: 2;
 }
@@ -1353,7 +1353,7 @@ pre .javascript .function {
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #d0104c;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1463,7 +1463,7 @@ pre .javascript .function {
   vertical-align: top;
   height: 2px;
   width: 100%;
-  background: #fff;
+  background: #e83015;
   margin-top: 3px;
 }
 .sidebar-toggle-line:first-child {
@@ -1557,7 +1557,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #baffc3;
+  background: #4f38ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1595,11 +1595,11 @@ pre .javascript .function {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #e83015;
+  border-bottom-color: #e83015;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #87daff;
+  color: #e83015;
 }
 .sidebar-panel {
   display: none;
@@ -1658,14 +1658,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #e83015;
+  border-bottom-color: #e83015;
 }
 .post-toc .nav .active-current > a {
-  color: #87daff;
+  color: #e83015;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #e83015;
 }
 .footer {
   font-size: 14px;
@@ -2121,7 +2121,7 @@ a.search-result {
   padding-left: 10px;
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #87daff;
+  background: #e83015;
 }
 .page-post-detail .comments {
   overflow: hidden;
