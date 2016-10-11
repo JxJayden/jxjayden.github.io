@@ -117,7 +117,7 @@
 <div class="container">
     <div id="wrapper">
         <h1>江曉東</h1>
-        <h2>醉後不知天在水，滿船清夢壓星河。</h2>
+        <h2>醉後不知天在水 滿船清夢壓星河</h2>
         <p><a class="blog" href="http://blog.jxdjayden.cn" target="_blank">blog</a></p>
         <p><a class="github" href="https://github.com/JxJayden" target="_blank">github</a></p>
         <p><a class="zhihu" href="https://www.zhihu.com/people/jxjayden" target="_blank">zhihu</a></p>
@@ -129,15 +129,12 @@
 
 <script src="//npmcdn.com/particlesjs@1.0.2/dist/particles.min.js"></script>
 <script>
-    window.onload = function() {
-  Particles.init({ options });
-};
-
-// e.g.
 window.onload = function() {
   Particles.init({
     selector: '.myCanvas',
-    color: '#0f9976'
+    color: '#0f9976',
+    sizeVariations: 4,
+    speed:0.4
   });
 };
 </script>
