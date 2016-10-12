@@ -16,100 +16,85 @@
           local(Times-Italic)
         ;
       }
-
       @font-face {
         font-family: 'YuMincho min';
         src: url('./font/YuMincho.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        body {
-          position: relative;
-          font-family: 'Rhythm Italic Serif', YuMincho, 'YuMincho min', serif;
-          color: #f5f5f5;
-          background-color: #090909;
-
-        }
-        .container {
-            display: table;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        #wrapper {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-            width: 320px;
-        }
-
-/*         .tree {
-          z-index: -1;
-          position: absolute;
-          top: 0;
-          left: -28px;
-          transform: rotate(180deg);
-        } */
-
-        .myCanvas {
-          position: absolute;
-          display: block;
-          top: 0;
-          left: 0;
-          z-index: -1;
-        }
-        h1, h2 {
-            margin: 0;
-        }
-        h1 {
-            color: white;
-            font-weight: normal;
-            font-size: 26px;
-            letter-spacing: .12em;
-            margin-bottom: 1em;
-        }
-        h2 {
-            color: #eee;
-            font-weight: normal;
-            font-size: 16px;
-            letter-spacing: .12em;
-            margin-bottom: 1em;
-        }
-        p {
-            font-size: 16px;
-            line-height: 2em;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-        a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color .6s ease;
-        }
-        .blog:hover {
-            color: #d7003a;
-        }
-        .resume:hover {
-            color: #EFBB24;
-        }
-        .github:hover {
-            color: #986DB2;
-        }
-/*         .douban:hover {
-            color:
-        } */
-        .zhihu:hover {
-            color: #0684bd;
-        }
-        .email:hover {
-          color: #3eb370;
-        }
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        position: relative;
+        font-family: 'Rhythm Italic Serif', YuMincho, 'YuMincho min', SimSun, sans-serif;
+        background-color: #090909;
+        color: #333;
+      }
+      .container {
+        display: table;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 320px;
+      }
+      .myCanvas {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      h1, h2 {
+        font-family: YuMincho, 'YuMincho min', SimSun, sans-serif;
+        margin: 0;
+      }
+      h1 {
+        color: white;
+        font-weight: normal;
+        font-size: 26px;
+        letter-spacing: .12em;
+        margin-bottom: 1em;
+      }
+      h2 {
+        color: #eee;
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: .12em;
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: 16px;
+        line-height: 2em;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+      a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color .6s ease;
+      }
+      .blog:hover {
+        color: #d7003a;
+      }
+      .resume:hover {
+        color: #EFBB24;
+      }
+      .github:hover {
+        color: #986DB2;
+      }
+      .zhihu:hover {
+        color: #0684bd;
+      }
+      .email:hover {
+        color: #3eb370;
+      }
     </style>
 </head>
 <body>
