@@ -31,6 +31,7 @@
         font-family: 'Rhythm Italic Serif', YuMincho, 'YuMincho min', SimSun, sans-serif;
         background-color: #090909;
         background-image: url('./BLACK_II_desktop-1.jpg');
+        background-repeat: none;
         color: #333;
       }
       .container {
@@ -117,11 +118,14 @@
 <script src="//npmcdn.com/particlesjs@1.0.2/dist/particles.min.js"></script>
 <script>
 window.onload = function() {
+  var maxParticles = 200;
+  if(screen.width <= 480) maxParticles = 100;
   Particles.init({
+    maxParticles: maxParticles,
     selector: '.myCanvas',
     color: '#0f9976',
     sizeVariations: 4,
-    speed:0.4
+    speed:0.5
   });
 };
 </script>
